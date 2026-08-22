@@ -1,0 +1,774 @@
+{
+  "id": "MdmOgvzAc6RLX8vd",
+  "playerId": "kzJIhZrkYtD7",
+  "slot": 1,
+  "name": "Investigação 1",
+  "contentVersion": "1.0.0",
+  "currentChapter": "prologue",
+  "flags": {
+    "chapter.prologue": true
+  },
+  "puzzles": {
+    "P-001": {
+      "id": "P-001",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-002": {
+      "id": "P-002",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-003": {
+      "id": "P-003",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-004": {
+      "id": "P-004",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-005": {
+      "id": "P-005",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-006": {
+      "id": "P-006",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-007": {
+      "id": "P-007",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-008": {
+      "id": "P-008",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-009": {
+      "id": "P-009",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-010": {
+      "id": "P-010",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-011": {
+      "id": "P-011",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-012": {
+      "id": "P-012",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-013": {
+      "id": "P-013",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-014": {
+      "id": "P-014",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-015": {
+      "id": "P-015",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-016": {
+      "id": "P-016",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-017": {
+      "id": "P-017",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-018": {
+      "id": "P-018",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-019": {
+      "id": "P-019",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-020": {
+      "id": "P-020",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-021": {
+      "id": "P-021",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-022": {
+      "id": "P-022",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-023": {
+      "id": "P-023",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-024": {
+      "id": "P-024",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-025": {
+      "id": "P-025",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-026": {
+      "id": "P-026",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-027": {
+      "id": "P-027",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-028": {
+      "id": "P-028",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-029": {
+      "id": "P-029",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-030": {
+      "id": "P-030",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-031": {
+      "id": "P-031",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-032": {
+      "id": "P-032",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-033": {
+      "id": "P-033",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-034": {
+      "id": "P-034",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-035": {
+      "id": "P-035",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-036": {
+      "id": "P-036",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-037": {
+      "id": "P-037",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-038": {
+      "id": "P-038",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-039": {
+      "id": "P-039",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-040": {
+      "id": "P-040",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-041": {
+      "id": "P-041",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-042": {
+      "id": "P-042",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-043": {
+      "id": "P-043",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-044": {
+      "id": "P-044",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-045": {
+      "id": "P-045",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-046": {
+      "id": "P-046",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-047": {
+      "id": "P-047",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-048": {
+      "id": "P-048",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-049": {
+      "id": "P-049",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-050": {
+      "id": "P-050",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-051": {
+      "id": "P-051",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-052": {
+      "id": "P-052",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-053": {
+      "id": "P-053",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-054": {
+      "id": "P-054",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-055": {
+      "id": "P-055",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-056": {
+      "id": "P-056",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-057": {
+      "id": "P-057",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-058": {
+      "id": "P-058",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-059": {
+      "id": "P-059",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-060": {
+      "id": "P-060",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-061": {
+      "id": "P-061",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-062": {
+      "id": "P-062",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-063": {
+      "id": "P-063",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-064": {
+      "id": "P-064",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-065": {
+      "id": "P-065",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-066": {
+      "id": "P-066",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-067": {
+      "id": "P-067",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-068": {
+      "id": "P-068",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-069": {
+      "id": "P-069",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-070": {
+      "id": "P-070",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-071": {
+      "id": "P-071",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-072": {
+      "id": "P-072",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-073": {
+      "id": "P-073",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-074": {
+      "id": "P-074",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-075": {
+      "id": "P-075",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-076": {
+      "id": "P-076",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-077": {
+      "id": "P-077",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-078": {
+      "id": "P-078",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-079": {
+      "id": "P-079",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-080": {
+      "id": "P-080",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-081": {
+      "id": "P-081",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-082": {
+      "id": "P-082",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-083": {
+      "id": "P-083",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-084": {
+      "id": "P-084",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-085": {
+      "id": "P-085",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-086": {
+      "id": "P-086",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-087": {
+      "id": "P-087",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-088": {
+      "id": "P-088",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-089": {
+      "id": "P-089",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-090": {
+      "id": "P-090",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-091": {
+      "id": "P-091",
+      "status": "locked",
+      "hintsUsed": 0
+    }
+  },
+  "evidence": {},
+  "links": [],
+  "unlockedApps": [
+    "terminal",
+    "files",
+    "code",
+    "browser",
+    "trace",
+    "graph",
+    "hex",
+    "image-lab",
+    "evidence",
+    "vault",
+    "forge",
+    "packet",
+    "memory",
+    "settings"
+  ],
+  "cwd": "/home/null",
+  "vfsSnapshot": {
+    "type": "dir",
+    "children": {
+      "home": {
+        "type": "dir",
+        "children": {
+          "null": {
+            "type": "dir",
+            "children": {
+              "Desktop": {
+                "type": "dir",
+                "children": {
+                  "README.txt": {
+                    "type": "file",
+                    "content": "Máquina apreendida — Case #ABYSS-3301\nOperador: INVESTIGATOR\nStatus: QUARANTINE\nNão conectar a redes externas.\n"
+                  },
+                  "notes.md": {
+                    "type": "file",
+                    "content": "# Notas\n\nAlgo está errado com a contagem de arquivos.\nO explorador gráfico não mostra tudo.\n"
+                  },
+                  "CASE_BRIEF.txt": {
+                    "type": "file",
+                    "content": "CASE BRIEF — ABYSS-3301\n\nSujeito: NULL (identidade não confirmada)\nMáquina apreendida em estado de quarantine.\nObjetivo inicial: análise forense local.\n\nObservação do analista anterior:\n\"A GUI mente. Confie no shell.\"\n"
+                  }
+                }
+              },
+              "Documents": {
+                "type": "dir",
+                "children": {
+                  "inventory.json": {
+                    "type": "file",
+                    "content": "{\n  \"case\": \"ABYSS-3301\",\n  \"subject\": \"NULL\",\n  \"files_reported\": 330,\n  \"warning\": \"GUI inventory may diverge from filesystem truth\"\n}"
+                  }
+                }
+              },
+              "projects": {
+                "type": "dir",
+                "children": {}
+              },
+              ".config": {
+                "type": "dir",
+                "children": {
+                  "session.env": {
+                    "type": "file",
+                    "content": "USER=null\nSHELL=/bin/bash\nTERM=xterm-256color\n"
+                  }
+                }
+              },
+              ".null": {
+                "type": "file",
+                "guiHidden": true,
+                "content": "DO NOT CONNECT TO MARIANA\n\nIf you are reading this, the quarantine failed\nor someone authorized deeper access.\n\n— N\n\nkey: observer.seed=0\nref: ORPHEUS/README\n"
+              },
+              ".bash_history": {
+                "type": "file",
+                "guiHidden": true,
+                "content": "ls -la\ncat Documents/inventory.json\ngit -C projects/orpheus log --oneline\n# don't connect\n"
+              },
+              "investigation": {
+                "type": "dir",
+                "children": {
+                  "prologue": {
+                    "type": "dir",
+                    "children": {
+                      "P-001": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Inventarios graficos e listagens de shell nem sempre concordam. Localize o que a GUI omite em /home/null."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Relatorio do explorador Files: \"330 entradas em /home/null\".\nOperador de quarentena anotou: \"contagem redonda demais\".\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Politica de listagem GUI: arquivos cujo nome comeca com ponto sao filtrados da arvore visual.\nTerminal: ls -la nao aplica o mesmo filtro.\n"
+                          },
+                          "inventory_snip.txt": {
+                            "type": "file",
+                            "content": "source: Documents/inventory.json\nfiles_reported: 330\nnote: \"GUI inventory may diverge from filesystem truth\"\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-002": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Prove que o inventario subconta. O numero reportado importa tanto quanto o que falta."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Extrato inventory.json:\n  \"case\": \"ABYSS-3301\"\n  \"files_reported\": 330\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Comparacao parcial com ls -la /home/null:\nentradas adicionais aparecem apenas no shell (dotfiles).\nO valor 330 e a afirmativa da GUI — anote-o.\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-003": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Historicos de shell sobrevivem a sessoes. Extraia intencoes do .bash_history da quarentena."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Fragmento recuperado de historico:\n  ls -la\n  cat Documents/inventory.json\n  git -C projects/orpheus log --oneline\n  # don't connect\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "O caminho projects/orpheus aparece cedo. O comentario final ecoa o aviso de Mariana.\nNome do toolkit no historico: ORPHEUS (case-insensitive em buscas).\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-004": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Briefings de caso enquadram o que a interface tenta ocultar. Leia o briefing na Desktop."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Desktop/CASE_BRIEF.txt cabeçalho: CASE BRIEF — ABYSS-3301\nSujeito: NULL\nObservacao: \"A GUI mente. Confie no shell.\"\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "O identificador do caso no cabecalho e o mesmo codigo de quarentena da maquina.\nRegistre o codigo completo ABYSS-XXXX.\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-005": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Dotfiles as vezes carregam sementes de identidade. Releia .null com atencao as chaves."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Linhas finais de .null (apos o aviso Mariana):\n  key: observer.seed=0\n  ref: ORPHEUS/README\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "A chave \"key\" parece um par nome=valor. O nome inclui \"observer\" e \"seed\".\nValor numerico residual: 0.\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "var": {
+        "type": "dir",
+        "children": {
+          "log": {
+            "type": "dir",
+            "children": {
+              "syslog": {
+                "type": "file",
+                "content": "Aug 21 02:11:01 null-machine kernel: quarantine mode engaged\nAug 21 02:11:04 null-machine abyss: investigator session opened\n"
+              }
+            }
+          }
+        }
+      },
+      "tmp": {
+        "type": "dir",
+        "children": {}
+      },
+      "etc": {
+        "type": "dir",
+        "children": {
+          "hostname": {
+            "type": "file",
+            "content": "null-machine\n"
+          },
+          "issue": {
+            "type": "file",
+            "content": "PROJECT ABYSS — Isolated Investigation Environment\n"
+          }
+        }
+      }
+    }
+  },
+  "narrativeLog": [
+    "quarantine: session opened"
+  ],
+  "createdAt": "2026-08-22T16:41:54.900Z",
+  "updatedAt": "2026-08-22T16:42:03.242Z",
+  "windowLayout": {
+    "windows": [
+      {
+        "id": "files-mt4lvqbp-1",
+        "app": "files",
+        "title": "Files",
+        "x": 0,
+        "y": 0,
+        "w": 533,
+        "h": 387,
+        "z": 11,
+        "minimized": false,
+        "maximized": false,
+        "subtitle": "/home/null"
+      },
+      {
+        "id": "terminal-mt4lvqft-2",
+        "app": "terminal",
+        "title": "Terminal",
+        "x": 533,
+        "y": 0,
+        "w": 533,
+        "h": 387,
+        "z": 12,
+        "minimized": false,
+        "maximized": false
+      },
+      {
+        "id": "trace-mt4lvs9r-3",
+        "app": "trace",
+        "title": "Trace",
+        "x": 1066,
+        "y": 0,
+        "w": 533,
+        "h": 387,
+        "z": 13,
+        "minimized": false,
+        "maximized": false,
+        "subtitle": "224/224 eventos"
+      },
+      {
+        "id": "evidence-mt4lvtgd-4",
+        "app": "evidence",
+        "title": "Evidence Board",
+        "x": 0,
+        "y": 387,
+        "w": 533,
+        "h": 387,
+        "z": 14,
+        "minimized": false,
+        "maximized": false,
+        "subtitle": "0 itens · 0 vínculos"
+      },
+      {
+        "id": "code-mt4lvuki-5",
+        "app": "code",
+        "title": "Code",
+        "x": 533,
+        "y": 387,
+        "w": 533,
+        "h": 387,
+        "z": 15,
+        "minimized": false,
+        "maximized": false,
+        "subtitle": ""
+      }
+    ]
+  }
+}

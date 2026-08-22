@@ -1,0 +1,24 @@
+{
+  "name": "project-abyss",
+  "private": true,
+  "version": "0.1.0",
+  "description": "PROJECT ABYSS — thriller investigativo técnico",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c cyan,magenta \"npm run dev -w @abyss/api\" \"npm run dev -w @abyss/web\"",
+    "build": "npm run build -w @abyss/shared && npm run build -w @abyss/content && npm run build -w @abyss/api && npm run build -w @abyss/web",
+    "db:migrate": "npm run db:migrate -w @abyss/api",
+    "soundtrack:download": "powershell -ExecutionPolicy Bypass -File ./documentacao/PROJECT_ABYSS_SOUNDTRACK_PACK/scripts/download_soundtrack.ps1",
+    "test": "npm run test -w @abyss/api --if-present"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "typescript": "^5.8.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

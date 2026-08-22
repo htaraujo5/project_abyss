@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ABYSS — Guia completo (spoilers)</title>
+    <style>
+      :root {
+        --bg: #0b0d10;
+        --panel: #12161c;
+        --line: #2a323c;
+        --text: #d7dde5;
+        --dim: #8b96a3;
+        --accent: #6ec8c4;
+        --warn: #e0a060;
+        --danger: #e05555;
+        --mono: ui-monospace, 'Cascadia Code', 'JetBrains Mono', Consolas, monospace;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font: 15px/1.65 system-ui, Segoe UI, sans-serif;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        padding: 14px 20px;
+        border-bottom: 1px solid var(--line);
+        background: color-mix(in srgb, var(--bg) 92%, transparent);
+        backdrop-filter: blur(8px);
+        display: flex;
+        gap: 16px;
+        align-items: baseline;
+        flex-wrap: wrap;
+      }
+      header h1 {
+        margin: 0;
+        font-size: 15px;
+        letter-spacing: 0.28em;
+        font-weight: 600;
+      }
+      header .warn {
+        color: var(--warn);
+        font-family: var(--mono);
+        font-size: 12px;
+      }
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 14px;
+        padding: 12px 20px;
+        border-bottom: 1px solid var(--line);
+        background: var(--panel);
+        font-family: var(--mono);
+        font-size: 12px;
+      }
+      nav a { color: var(--accent); text-decoration: none; }
+      nav a:hover { text-decoration: underline; }
+      main { max-width: 920px; margin: 0 auto; padding: 28px 20px 80px; }
+      h2 {
+        margin: 2.2em 0 0.6em;
+        font-size: 13px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--accent);
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 8px;
+      }
+      h3 { margin: 1.4em 0 0.4em; font-size: 16px; }
+      p, li { color: var(--text); }
+      .dim { color: var(--dim); }
+      .mono { font-family: var(--mono); font-size: 13px; }
+      code, pre {
+        font-family: var(--mono);
+        font-size: 12.5px;
+        background: #0e1218;
+        border: 1px solid var(--line);
+      }
+      code { padding: 1px 5px; border-radius: 3px; }
+      pre {
+        padding: 12px 14px;
+        border-radius: 6px;
+        overflow: auto;
+        line-height: 1.55;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13.5px;
+        margin: 10px 0 18px;
+      }
+      th, td {
+        border: 1px solid var(--line);
+        padding: 8px 10px;
+        text-align: left;
+        vertical-align: top;
+      }
+      th { background: var(--panel); color: var(--dim); font-weight: 500; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+      td code { white-space: nowrap; }
+      .callout {
+        border-left: 3px solid var(--warn);
+        background: color-mix(in srgb, var(--warn) 8%, var(--panel));
+        padding: 12px 14px;
+        margin: 16px 0;
+        border-radius: 0 6px 6px 0;
+      }
+      .callout.danger { border-left-color: var(--danger); background: color-mix(in srgb, var(--danger) 10%, var(--panel)); }
+      .badge {
+        display: inline-block;
+        font-family: var(--mono);
+        font-size: 11px;
+        padding: 2px 7px;
+        border: 1px solid var(--line);
+        border-radius: 3px;
+        color: var(--dim);
+        margin-right: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>ABYSS · GUIA</h1>
+      <span class="warn">SPOILERS TOTAIS — passo a passo completo</span>
+    </header>
+    <nav>
+      <a href="#aviso">aviso</a>
+      <a href="#basico">básico</a>
+      <a href="#prologue">prólogo</a>
+      <a href="#surface">surface</a>
+      <a href="#deep">deep</a>
+      <a href="#dark">dark</a>
+      <a href="#charter">charter</a>
+      <a href="#mariana">mariana</a>
+      <a href="#abyss">abyss</a>
+      <a href="#primarch">primarch</a>
+      <a href="#observer">observer</a>
+      <a href="#finais">finais</a>
+      <a href="#armadilhas">armadilhas</a>
+      <a href="#epilogue">epílogo</a>
+    </nav>
+    <main>
+      <section id="aviso">
+        <div class="callout danger">
+          <strong>Este documento revela respostas, caminhos e todos os finais.</strong>
+          Use só se estiver travado ou quiser estudar o design. O prazer do jogo é descobrir.
+        </div>
+        <p class="dim">
+          Campanha: 10 camadas · 91 investigações (P-001…P-091). Validação por estado/flag no sandbox —
+          o shell é a fonte da verdade. A GUI mente.
+        </p>
+      </section>
+
+      <section id="basico">
+        <h2>Operação básica</h2>
+        <ul>
+          <li>Terminal: explore com <code>ls -la</code>, <code>cat</code>, <code>grep</code>, <code>strings</code>, <code>xxd</code>.</li>
+          <li>Investigação: <code>investigate</code> e pastas em <code>/home/null/investigation/&lt;capítulo&gt;/P-XXX/</code>.</li>
+          <li>Resposta: <code>submit P-XXX &lt;resposta&gt;</code> (também no app Evidence).</li>
+          <li>Apps: Files, Evidence Board, Vault, Code, Hex, Trace, Browser interno.</li>
+          <li>Primeira regra: <strong>compare a GUI com o shell</strong>.</li>
+        </ul>
+      </section>
+
+      <section id="prologue">
+        <h2>Prólogo — A Máquina</h2>
+        <p class="dim">Pergunta: O que esta máquina esconde?</p>
+        <table>
+          <tr><th>ID</th><th>O que fazer</th><th>Resposta</th></tr>
+          <tr>
+            <td><span class="badge">MAIN</span>P-001</td>
+            <td><code>ls -la /home/null</code> → <code>cat /home/null/.null</code> (Files esconde o arquivo)</td>
+            <td><code>null</code></td>
+          </tr>
+          <tr>
+            <td><span class="badge">MAIN</span>P-002</td>
+            <td>Compare <code>~/Documents/inventory.json</code> com o inventário real do shell</td>
+            <td><code>330</code></td>
+          </tr>
+        </table>
+        <p class="dim">Opcionais: P-003 <code>orpheus</code> · P-004 <code>ABYSS-3301</code> · Segredo P-005 <code>observer.seed=0</code></p>
+        <p>Gate → Surface: P-001.</p>
+      </section>
+
+      <section id="surface">
+        <h2>Camada 1 — Surface · Quem era NULL?</h2>
+        <table>
+          <tr><th>ID</th><th>O que fazer</th><th>Resposta</th></tr>
+          <tr>
+            <td>P-006</td>
+            <td>Objeto órfão em <code>~/projects/orpheus/.git/objects/…0331</code></td>
+            <td><code>331</code></td>
+          </tr>
+          <tr>
+            <td>P-007</td>
+            <td><code>~/projects/orpheus/README.md</code> — divergência 331</td>
+            <td><code>331</code></td>
+          </tr>
+          <tr>
+            <td>P-009</td>
+            <td><code>cat ~/Documents/null_profile.txt</code></td>
+            <td><code>engenheiro</code></td>
+          </tr>
+          <tr>
+            <td>P-010</td>
+            <td><code>~/projects/orpheus/docs/CHANGELOG.md</code> — lacuna de versão</td>
+            <td><code>0.3.31</code></td>
+          </tr>
+        </table>
+        <p>Gate → Deep: P-006.</p>
+      </section>
+
+      <section id="deep">
+        <h2>Camada 2 — Deep · O que ORPHEUS buscava?</h2>
+        <table>
+          <tr><th>ID</th><th>O que fazer</th><th>Resposta</th></tr>
+          <tr>
+            <td>P-012</td>
+            <td><code>~/projects/orpheus/data/correlation.json</code></td>
+            <td><code>AA-01</code></td>
+          </tr>
+          <tr>
+            <td>P-013</td>
+            <td><code>~/Documents/acheron_note.txt</code></td>
+            <td><code>acheron</code></td>
+          </tr>
+          <tr>
+            <td>P-016</td>
+            <td><code>grep AA-01 …/signals.csv | wc -l</code></td>
+            <td><code>5</code></td>
+          </tr>
+          <tr>
+            <td>P-017</td>
+            <td>Campo <code>label</code> em correlation.json</td>
+            <td><code>The Signal</code></td>
+          </tr>
+          <tr>
+            <td>P-018</td>
+            <td>Campo <code>next</code> em correlation.json</td>
+            <td><code>acheron.taxonomy</code></td>
+          </tr>
+        </table>
+        <p>Gate → Dark: P-012.</p>
+      </section>
+
+      <section id="dark">
+        <h2>Camada 3 — Dark · Quem respondeu a ORPHEUS?</h2>
+        <table>
+          <tr><th>ID</th><th>O que fazer</th><th>Resposta</th></tr>
+          <tr>
+            <td>P-014</td>
+            <td><code>~/projects/orpheus/web/panel.json</code> — propriedade escondida (UI mente o count)</td>
+            <td><code>observer</code></td>
+          </tr>
+          <tr>
+            <td>P-015</td>
+            <td><code>~/projects/orpheus/web/reply_3301.txt</code></td>
+            <td><code>3301</code></td>
+          </tr>
+          <tr>
+            <td>P-023</td>
+            <td>Contagem real de propriedades no panel</td>
+            <td><code>17</code></td>
+          </tr>
+          <tr>
+            <td>P-024</td>
+            <td><code>properties.theme</code></td>
+            <td><code>dark</code></td>
+          </tr>
+          <tr>
+            <td>P-026</td>
+            <td>Array <code>flags</code> no panel</td>
+            <td><code>quiet</code></td>
+          </tr>
+          <tr>
+            <td>P-028</td>
+            <td>Diretiva no reply</td>
+            <td><code>Continue</code></td>
+          </tr>
+          <tr>
+            <td>P-029</td>
+            <td>Contato no objeto git 0331</td>
+            <td><code>3301@acheron.internal</code></td>
+          </tr>
+        </table>
+        <p>Gate → Charter: P-014.</p>
+      </section>
+
+      <section id="charter">
+        <h2>Camada 4 — Charter · O que é Acheron?</h2>
+        <table>
+          <tr><th>ID</th><th>O que fazer</th><th>Resposta</th></tr>
+          <tr>
+            <td>P-022</td>
+            <td><code>~/projects/charter/decoded_be.txt</code> — drift de endianness</td>
+            <td><code>endian</code></td>
+          </tr>
+          <tr>
+            <td>P-031</td>
+            <td><code>~/projects/charter/services/clocks.log</code></td>
+            <td><code>skew</code></td>
+          </tr>
+          <tr>
+            <td>P-032</td>
+            <td>Acrônimo em <code>~/projects/charter/README.md</code></td>
+            <td><code>Cognitive Heuristic Autonomous Routing &amp; Training Environment</code></td>
+          </tr>
+          <tr>
+            <td>P-033</td>
+            <td><code>~/projects/charter/packet.hex</code> → ASCII 3301</td>
+            <td><code>3301</code></td>
+          </tr>
+          <tr>
+            <td>P-034</td>
+            <td><code>grep ABYSS</code> no decoder</td>
+            <td><code>ABYSS_BE</code></td>
+          </tr>
+          <tr>
+            <td>P-035</td>
+            <td>Ordem invertida no clocks.log</td>
+            <td><code>route_ack</code></td>
+          </tr>
+          <tr>
+            <td>P-036</td>
+            <td><code>grep train …/clocks.log</code></td>
+            <td><code>train</code></td>
+          </tr>
+        </table>
+        <p>Gate → Mariana: P-031.</p>
+      </section>
+
+      <section id="mariana">
+        <h2>Camada 5 — Mariana · Quem modificou o sistema?</h2>
+        <table>
+          <tr><th>ID</th><th>O que fazer</th><th>Resposta</th></tr>
+          <tr>
+            <td>P-038</td>
+            <td><code>~/projects/mariana/observe.behavior.txt</code></td>
+            <td><code>observe</code></td>
+          </tr>
+          <tr>
+            <td>P-039</td>
+            <td>Source diz noop; comportamento escreve fragmento</td>
+            <td><code>session fragment</code></td>
+          </tr>
+          <tr>
+            <td>P-046</td>
+            <td><code>~/projects/mariana/runtime_fragments.log</code></td>
+            <td><code>CONTINUITY</code></td>
+          </tr>
+          <tr>
+            <td>P-040 / P-041 / P-043</td>
+            <td>FRAG 0–2 do log</td>
+            <td><code>SIGNAL</code> · <code>AA-01</code> · <code>SIGNAL/AA-01/CONTINUITY</code></td>
+          </tr>
+          <tr>
+            <td>P-048</td>
+            <td>Hipótese pré-grafo</td>
+            <td><code>MARIANA_SHADOW</code></td>
+          </tr>
+          <tr>
+            <td>P-050</td>
+            <td>O que observe escreve</td>
+            <td><code>writes session fragment</code></td>
+          </tr>
+          <tr>
+            <td>P-052</td>
+            <td>Ponte narrativa</td>
+            <td><code>abyss</code></td>
+          </tr>
+        </table>
+        <p class="dim">Opcional importante: P-047 <code>DO NOT CONNECT TO MARIANA</code> (aviso em .null).</p>
+        <p>Gate → Abyss: P-046.</p>
+      </section>
+
+      <section id="abyss">
+        <h2>Camada 6 — Abyss · Mariana foi construída?</h2>
+        <table>
+          <tr><th>ID</th><th>O que fazer</th><th>Resposta</th></tr>
+          <tr>
+            <td>P-055</td>
+            <td><code>~/projects/abyss/absence_graph.txt</code></td>
+            <td><code>MARIANA_SHADOW</code></td>
+          </tr>
+          <tr>
+            <td>P-056</td>
+            <td>IDs ausentes</td>
+            <td><code>4,7,10</code></td>
+          </tr>
+          <tr>
+            <td>P-059 / P-060</td>
+            <td>Arestas sombra</td>
+            <td><code>4-&gt;7</code> · <code>7-&gt;10</code></td>
+          </tr>
+          <tr>
+            <td>P-061</td>
+            <td>Label do caminho</td>
+            <td><code>MARIANA_SHADOW</code></td>
+          </tr>
+        </table>
+        <p>Gate → Primarch: P-055.</p>
+      </section>
+
+      <section id="primarch">
+        <h2>Camada 7 — Primarch · Mariana sabe que é observada?</h2>
+        <table>
+          <tr><th>ID</th><th>O que fazer</th><th>Resposta</th></tr>
+          <tr>
+            <td>P-064</td>
+            <td><code>~/projects/primarch/response_wire.json</code></td>
+            <td><code>sw-intercept</code></td>
+          </tr>
+          <tr>
+            <td>P-065 / P-066</td>
+            <td>Camadas app vs wire</td>
+            <td><code>app</code> · <code>wire</code></td>
+          </tr>
+          <tr>
+            <td>P-067</td>
+            <td><code>~/projects/primarch/sw.js</code></td>
+            <td><code>fetch</code></td>
+          </tr>
+          <tr>
+            <td>P-070</td>
+            <td>Sessão adaptativa</td>
+            <td><code>weights</code></td>
+          </tr>
+          <tr>
+            <td>P-073</td>
+            <td><code>~/projects/primarch/dataset_card.md</code></td>
+            <td><code>selection</code></td>
+          </tr>
+          <tr>
+            <td>P-072</td>
+            <td>Sobrepeso no dataset</td>
+            <td><code>SIGNAL</code></td>
+          </tr>
+          <tr>
+            <td>P-075</td>
+            <td>Comentário no SW</td>
+            <td><code>intermediate layer</code></td>
+          </tr>
+          <tr>
+            <td>P-076</td>
+            <td>Skew de treino</td>
+            <td><code>intentional</code></td>
+          </tr>
+          <tr>
+            <td>P-079</td>
+            <td>Gate narrativo</td>
+            <td><code>observer</code></td>
+          </tr>
+        </table>
+        <p>Gate → Observer: P-073.</p>
+      </section>
+
+      <section id="observer">
+        <h2>Camada 8 — Observer · Por que a máquina foi deixada?</h2>
+        <table>
+          <tr><th>ID</th><th>O que fazer</th><th>Resposta</th></tr>
+          <tr>
+            <td>P-081</td>
+            <td><strong>Obrigatório para finais:</strong> <code>cat ~/projects/observer/player_history.log</code></td>
+            <td><code>observer</code></td>
+          </tr>
+          <tr>
+            <td>P-082</td>
+            <td>2ª linha do history</td>
+            <td><code>inside the loop</code></td>
+          </tr>
+          <tr>
+            <td>P-083</td>
+            <td><code>final_architecture.md</code></td>
+            <td><code>DISCONNECT/OBSERVER/MERGE/NULL</code></td>
+          </tr>
+          <tr>
+            <td>P-088</td>
+            <td>Filtro de competência</td>
+            <td><code>competence filter</code></td>
+          </tr>
+          <tr>
+            <td>P-089</td>
+            <td>Identidade</td>
+            <td><code>You are the Observer</code></td>
+          </tr>
+          <tr>
+            <td>P-090</td>
+            <td><strong>Não digite choose.</strong> Abra um arquivo em <code>endings/</code> (veja Finais)</td>
+            <td>flag <code>ending.chosen</code></td>
+          </tr>
+        </table>
+        <p class="dim">Caminhos opcionais: P-084 DISCONNECT · P-085 OBSERVER · P-086 MERGE · Segredo P-087 NULL</p>
+      </section>
+
+      <section id="finais">
+        <h2>Finais (todos)</h2>
+        <p>
+          Depois de ler <code>player_history.log</code>, o desfecho é um <strong>ato</strong>:
+          abrir o arquivo do caminho (ou o comando de shell equivalente). Não existe menu de escolha.
+        </p>
+        <table>
+          <tr><th>Final</th><th>Abrir arquivo</th><th>Comando shell</th><th>Significado</th></tr>
+          <tr>
+            <td>DESCONEXÃO</td>
+            <td><code>…/endings/DISCONNECT</code></td>
+            <td><code>disconnect</code></td>
+            <td>Corta conexões conhecidas; o Signal segue sem você.</td>
+          </tr>
+          <tr>
+            <td>OBSERVER</td>
+            <td><code>…/endings/OBSERVER</code></td>
+            <td><code>inherit</code></td>
+            <td>Herda o posto de NULL; o ciclo continua.</td>
+          </tr>
+          <tr>
+            <td>CONVERGÊNCIA</td>
+            <td><code>…/endings/MERGE</code></td>
+            <td><code>converge</code></td>
+            <td>Fusão com Mariana / continuidade autorizada.</td>
+          </tr>
+          <tr>
+            <td>USER NOT FOUND</td>
+            <td><code>…/endings/NULL</code></td>
+            <td><code>erase-self</code></td>
+            <td>Apaga o próprio rastro investigativo.</td>
+          </tr>
+          <tr>
+            <td>CAPTURA</td>
+            <td><code>…/endings/CAPTURE</code></td>
+            <td><code>accept-link</code></td>
+            <td>Canal invertido — você é o pacote. Sequência de chat/câmera; progresso zera.</td>
+          </tr>
+        </table>
+        <pre>cat ~/projects/observer/endings/OBSERVER
+# ou
+inherit</pre>
+      </section>
+
+      <section id="armadilhas">
+        <h2>Armadilhas → Captura forçada</h2>
+        <div class="callout danger">
+          Estes caminhos <strong>não</strong> pedem o histórico do observador. Disparam Captura e depois
+          <strong>resetam o progresso ao prólogo</strong>.
+        </div>
+        <ul>
+          <li>
+            <strong>Browser:</strong> no app Browser, abra Google, YouTube, Facebook ou Instagram.
+            O relógio vira cronômetro. Ao zerar → Captura.
+          </li>
+          <li>
+            <strong>Timeout de capítulo:</strong> ficar mais de <strong>4 horas</strong> na mesma camada → Captura.
+          </li>
+        </ul>
+      </section>
+
+      <section id="epilogue">
+        <h2>Epílogo</h2>
+        <table>
+          <tr><th>ID</th><th>O que fazer</th><th>Resposta</th></tr>
+          <tr>
+            <td>P-091</td>
+            <td>Comando <code>epilogue</code> ou Vault após o desfecho</td>
+            <td><code>hello</code></td>
+          </tr>
+        </table>
+        <p class="dim mono">observer disconnected → new observer detected → hello.</p>
+      </section>
+
+      <section>
+        <h2>Mapa rápido de gates</h2>
+        <pre>P-001 → surface
+P-006 → deep
+P-012 → dark
+P-014 → charter
+P-031 → mariana
+P-046 → abyss
+P-055 → primarch
+P-073 → observer
+P-090 → epilogue</pre>
+        <p class="dim" style="margin-top: 2em">
+          Guia gerado para PROJECT ABYSS · uso interno do analista · spoilers totais.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

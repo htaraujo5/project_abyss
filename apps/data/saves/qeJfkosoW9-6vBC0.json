@@ -1,0 +1,314 @@
+{
+  "id": "qeJfkosoW9-6vBC0",
+  "playerId": "aJUvXkB_1Rg5",
+  "slot": 1,
+  "name": "QA Save",
+  "contentVersion": "1.0.0",
+  "currentChapter": "surface",
+  "flags": {
+    "chapter.prologue": true,
+    "found.null": true,
+    "chapter.surface": true
+  },
+  "puzzles": {
+    "P-001": {
+      "id": "P-001",
+      "status": "completed",
+      "hintsUsed": 0,
+      "completedAt": "2026-08-22T15:04:55.667Z"
+    },
+    "P-006": {
+      "id": "P-006",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-009": {
+      "id": "P-009",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-010": {
+      "id": "P-010",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-011": {
+      "id": "P-011",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-012": {
+      "id": "P-012",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-013": {
+      "id": "P-013",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-014": {
+      "id": "P-014",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-015": {
+      "id": "P-015",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-022": {
+      "id": "P-022",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-031": {
+      "id": "P-031",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-038": {
+      "id": "P-038",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-046": {
+      "id": "P-046",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-055": {
+      "id": "P-055",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-064": {
+      "id": "P-064",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-073": {
+      "id": "P-073",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-081": {
+      "id": "P-081",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-090": {
+      "id": "P-090",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-091": {
+      "id": "P-091",
+      "status": "locked",
+      "hintsUsed": 0
+    }
+  },
+  "evidence": {
+    "EV-NULL-DOTFILE": {
+      "id": "EV-NULL-DOTFILE",
+      "state": "observed"
+    },
+    "EV-WARNING-MARIANA": {
+      "id": "EV-WARNING-MARIANA",
+      "state": "observed"
+    },
+    "EV-GUI-DIVERGENCE": {
+      "id": "EV-GUI-DIVERGENCE",
+      "state": "observed"
+    }
+  },
+  "links": [],
+  "unlockedApps": [
+    "terminal",
+    "files",
+    "code",
+    "browser",
+    "trace",
+    "graph",
+    "hex",
+    "image-lab",
+    "evidence",
+    "vault",
+    "settings"
+  ],
+  "cwd": "/home/null",
+  "vfsSnapshot": {
+    "type": "dir",
+    "children": {
+      "home": {
+        "type": "dir",
+        "children": {
+          "null": {
+            "type": "dir",
+            "children": {
+              "Desktop": {
+                "type": "dir",
+                "children": {
+                  "README.txt": {
+                    "type": "file",
+                    "content": "Máquina apreendida — Case #ABYSS-3301\nOperador: INVESTIGATOR\nStatus: QUARANTINE\nNão conectar a redes externas.\n"
+                  },
+                  "notes.md": {
+                    "type": "file",
+                    "content": "# Notas\n\nAlgo está errado com a contagem de arquivos.\nO explorador gráfico não mostra tudo.\n"
+                  },
+                  "CASE_BRIEF.txt": {
+                    "type": "file",
+                    "content": "CASE BRIEF — ABYSS-3301\n\nSujeito: NULL (identidade não confirmada)\nMáquina apreendida em estado de quarantine.\nObjetivo inicial: análise forense local.\n\nObservação do analista anterior:\n\"A GUI mente. Confie no shell.\"\n"
+                  }
+                }
+              },
+              "Documents": {
+                "type": "dir",
+                "children": {
+                  "inventory.json": {
+                    "type": "file",
+                    "content": "{\n  \"case\": \"ABYSS-3301\",\n  \"subject\": \"NULL\",\n  \"files_reported\": 330,\n  \"warning\": \"GUI inventory may diverge from filesystem truth\"\n}"
+                  },
+                  "null_profile.txt": {
+                    "type": "file",
+                    "content": "Assunto NULL — perfil preliminar\n\nEngenheiro de sistemas. Interesse em correlação de padrões.\nProjeto recorrente: ORPHEUS.\nPossível vínculo Acheron Systems (não confirmado).\n"
+                  }
+                }
+              },
+              "projects": {
+                "type": "dir",
+                "children": {
+                  "orpheus": {
+                    "type": "dir",
+                    "children": {
+                      "README.md": {
+                        "type": "file",
+                        "content": "# ORPHEUS\n\nPattern correlation toolkit.\n\nDocumentação oficial cita commit **331**.\nBranch main parece ter parado em **330**.\n\nSe você está lendo isto, continue a divergência.\n"
+                      },
+                      ".git": {
+                        "type": "dir",
+                        "children": {
+                          "HEAD": {
+                            "type": "file",
+                            "content": "ref: refs/heads/main\n"
+                          },
+                          "refs": {
+                            "type": "dir",
+                            "children": {
+                              "heads": {
+                                "type": "dir",
+                                "children": {
+                                  "main": {
+                                    "type": "file",
+                                    "content": "0000000000000000000000000000000000000330\n"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "objects": {
+                            "type": "dir",
+                            "children": {
+                              "0000000000000000000000000000000000000330": {
+                                "type": "file",
+                                "content": "commit 330\nparent ...\n\nstop before pattern engine\n"
+                              },
+                              "0000000000000000000000000000000000000331": {
+                                "type": "file",
+                                "guiHidden": true,
+                                "content": "commit 331 ORPHAN\n\nfeat: enable ORPHEUS pattern correlation\n\nsubject: The Signal is not noise.\ncontact: 3301@acheron.internal\n"
+                              }
+                            }
+                          },
+                          "COMMIT_EDITMSG": {
+                            "type": "file",
+                            "content": "chore: sync docs to 330\n"
+                          }
+                        }
+                      },
+                      "docs": {
+                        "type": "dir",
+                        "children": {
+                          "CHANGELOG.md": {
+                            "type": "file",
+                            "content": "# Changelog\n\n## 0.3.30\n- documentation freeze at commit 330\n\n## 0.3.31 (referenced, missing from main)\n- ORPHEUS pattern engine\n"
+                          }
+                        }
+                      },
+                      "src": {
+                        "type": "dir",
+                        "children": {
+                          "main.js": {
+                            "type": "file",
+                            "content": "// ORPHEUS stub — pattern correlator\nconst CONFIG = { commits_documented: 331, commits_on_main: 330 };\nconsole.log(JSON.stringify(CONFIG));\n"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              ".config": {
+                "type": "dir",
+                "children": {
+                  "session.env": {
+                    "type": "file",
+                    "content": "USER=null\nSHELL=/bin/bash\nTERM=xterm-256color\n"
+                  }
+                }
+              },
+              ".null": {
+                "type": "file",
+                "guiHidden": true,
+                "content": "DO NOT CONNECT TO MARIANA\n\nIf you are reading this, the quarantine failed\nor someone authorized deeper access.\n\n— N\n\nkey: observer.seed=0\nref: ORPHEUS/README\n"
+              },
+              ".bash_history": {
+                "type": "file",
+                "guiHidden": true,
+                "content": "ls -la\ncat Documents/inventory.json\ngit -C projects/orpheus log --oneline\n# don't connect\n"
+              }
+            }
+          }
+        }
+      },
+      "var": {
+        "type": "dir",
+        "children": {
+          "log": {
+            "type": "dir",
+            "children": {
+              "syslog": {
+                "type": "file",
+                "content": "Aug 21 02:11:01 null-machine kernel: quarantine mode engaged\nAug 21 02:11:04 null-machine abyss: investigator session opened\n"
+              }
+            }
+          }
+        }
+      },
+      "tmp": {
+        "type": "dir",
+        "children": {}
+      },
+      "etc": {
+        "type": "dir",
+        "children": {
+          "hostname": {
+            "type": "file",
+            "content": "null-machine\n"
+          },
+          "issue": {
+            "type": "file",
+            "content": "PROJECT ABYSS — Isolated Investigation Environment\n"
+          }
+        }
+      }
+    }
+  },
+  "narrativeLog": [
+    "quarantine: session opened",
+    "prologue.complete"
+  ],
+  "createdAt": "2026-08-22T15:04:55.623Z",
+  "updatedAt": "2026-08-22T15:04:55.668Z"
+}

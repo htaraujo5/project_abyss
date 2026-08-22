@@ -1,0 +1,3066 @@
+{
+  "id": "79W5rwIVGVtszcGy",
+  "playerId": "m6L5hKphY6Ex",
+  "slot": 1,
+  "name": "Investigação 1",
+  "contentVersion": "1.0.0",
+  "currentChapter": "epilogue",
+  "flags": {
+    "chapter.prologue": true,
+    "found.null": true,
+    "chapter.surface": true,
+    "read.changelog.gap": true,
+    "found.orpheus": true,
+    "chapter.deep": true,
+    "read.null.profile": true,
+    "ran.orpheus.main": true,
+    "found.signal": true,
+    "chapter.dark": true,
+    "read.acheron.taxonomy": true,
+    "found.observer.prop": true,
+    "chapter.charter": true,
+    "read.3301.reply": true,
+    "understood.decoder.drift": true,
+    "found.clock.skew": true,
+    "chapter.mariana": true,
+    "found.observe": true,
+    "found.runtime.fragments": true,
+    "chapter.abyss": true,
+    "found.absence.graph": true,
+    "chapter.primarch": true,
+    "found.sw.intercept": true,
+    "found.dataset.intent": true,
+    "chapter.observer": true,
+    "read.player.history": true,
+    "ending.chosen": true,
+    "ending.null": true,
+    "chapter.epilogue": true,
+    "epilogue.seen": true,
+    "ending.capture": true
+  },
+  "puzzles": {
+    "P-001": {
+      "id": "P-001",
+      "status": "completed",
+      "hintsUsed": 1,
+      "completedAt": "2026-08-22T18:06:20.619Z"
+    },
+    "P-002": {
+      "id": "P-002",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-003": {
+      "id": "P-003",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-004": {
+      "id": "P-004",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-005": {
+      "id": "P-005",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-006": {
+      "id": "P-006",
+      "status": "completed",
+      "hintsUsed": 0,
+      "completedAt": "2026-08-22T18:13:23.544Z"
+    },
+    "P-007": {
+      "id": "P-007",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-008": {
+      "id": "P-008",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-009": {
+      "id": "P-009",
+      "status": "completed",
+      "hintsUsed": 0,
+      "completedAt": "2026-08-22T18:14:12.841Z"
+    },
+    "P-010": {
+      "id": "P-010",
+      "status": "completed",
+      "hintsUsed": 0,
+      "completedAt": "2026-08-22T18:12:13.484Z"
+    },
+    "P-011": {
+      "id": "P-011",
+      "status": "completed",
+      "hintsUsed": 0,
+      "completedAt": "2026-08-22T18:14:47.937Z"
+    },
+    "P-012": {
+      "id": "P-012",
+      "status": "completed",
+      "hintsUsed": 0,
+      "completedAt": "2026-08-22T18:16:10.554Z"
+    },
+    "P-013": {
+      "id": "P-013",
+      "status": "completed",
+      "hintsUsed": 0,
+      "completedAt": "2026-08-22T18:16:37.342Z"
+    },
+    "P-014": {
+      "id": "P-014",
+      "status": "completed",
+      "hintsUsed": 0,
+      "completedAt": "2026-08-22T18:17:58.090Z"
+    },
+    "P-015": {
+      "id": "P-015",
+      "status": "completed",
+      "hintsUsed": 0,
+      "completedAt": "2026-08-22T18:18:45.353Z"
+    },
+    "P-016": {
+      "id": "P-016",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-017": {
+      "id": "P-017",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-018": {
+      "id": "P-018",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-019": {
+      "id": "P-019",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-020": {
+      "id": "P-020",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-021": {
+      "id": "P-021",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-022": {
+      "id": "P-022",
+      "status": "completed",
+      "hintsUsed": 0,
+      "completedAt": "2026-08-22T18:20:05.486Z"
+    },
+    "P-023": {
+      "id": "P-023",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-024": {
+      "id": "P-024",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-025": {
+      "id": "P-025",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-026": {
+      "id": "P-026",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-027": {
+      "id": "P-027",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-028": {
+      "id": "P-028",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-029": {
+      "id": "P-029",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-030": {
+      "id": "P-030",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-031": {
+      "id": "P-031",
+      "status": "completed",
+      "hintsUsed": 0,
+      "completedAt": "2026-08-22T18:20:30.374Z"
+    },
+    "P-032": {
+      "id": "P-032",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-033": {
+      "id": "P-033",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-034": {
+      "id": "P-034",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-035": {
+      "id": "P-035",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-036": {
+      "id": "P-036",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-037": {
+      "id": "P-037",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-038": {
+      "id": "P-038",
+      "status": "completed",
+      "hintsUsed": 0,
+      "completedAt": "2026-08-22T18:21:31.732Z"
+    },
+    "P-039": {
+      "id": "P-039",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-040": {
+      "id": "P-040",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-041": {
+      "id": "P-041",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-042": {
+      "id": "P-042",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-043": {
+      "id": "P-043",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-044": {
+      "id": "P-044",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-045": {
+      "id": "P-045",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-046": {
+      "id": "P-046",
+      "status": "completed",
+      "hintsUsed": 0,
+      "completedAt": "2026-08-22T18:21:56.162Z"
+    },
+    "P-047": {
+      "id": "P-047",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-048": {
+      "id": "P-048",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-049": {
+      "id": "P-049",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-050": {
+      "id": "P-050",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-051": {
+      "id": "P-051",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-052": {
+      "id": "P-052",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-053": {
+      "id": "P-053",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-054": {
+      "id": "P-054",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-055": {
+      "id": "P-055",
+      "status": "completed",
+      "hintsUsed": 0,
+      "completedAt": "2026-08-22T18:22:50.622Z"
+    },
+    "P-056": {
+      "id": "P-056",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-057": {
+      "id": "P-057",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-058": {
+      "id": "P-058",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-059": {
+      "id": "P-059",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-060": {
+      "id": "P-060",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-061": {
+      "id": "P-061",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-062": {
+      "id": "P-062",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-063": {
+      "id": "P-063",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-064": {
+      "id": "P-064",
+      "status": "completed",
+      "hintsUsed": 0,
+      "completedAt": "2026-08-22T18:23:57.736Z"
+    },
+    "P-065": {
+      "id": "P-065",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-066": {
+      "id": "P-066",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-067": {
+      "id": "P-067",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-068": {
+      "id": "P-068",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-069": {
+      "id": "P-069",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-070": {
+      "id": "P-070",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-071": {
+      "id": "P-071",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-072": {
+      "id": "P-072",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-073": {
+      "id": "P-073",
+      "status": "completed",
+      "hintsUsed": 0,
+      "completedAt": "2026-08-22T18:24:13.900Z"
+    },
+    "P-074": {
+      "id": "P-074",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-075": {
+      "id": "P-075",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-076": {
+      "id": "P-076",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-077": {
+      "id": "P-077",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-078": {
+      "id": "P-078",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-079": {
+      "id": "P-079",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-080": {
+      "id": "P-080",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-081": {
+      "id": "P-081",
+      "status": "completed",
+      "hintsUsed": 0,
+      "completedAt": "2026-08-22T18:24:37.438Z"
+    },
+    "P-082": {
+      "id": "P-082",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-083": {
+      "id": "P-083",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-084": {
+      "id": "P-084",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-085": {
+      "id": "P-085",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-086": {
+      "id": "P-086",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-087": {
+      "id": "P-087",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-088": {
+      "id": "P-088",
+      "status": "available",
+      "hintsUsed": 0
+    },
+    "P-089": {
+      "id": "P-089",
+      "status": "locked",
+      "hintsUsed": 0
+    },
+    "P-090": {
+      "id": "P-090",
+      "status": "completed",
+      "hintsUsed": 0,
+      "completedAt": "2026-08-22T18:25:05.438Z"
+    },
+    "P-091": {
+      "id": "P-091",
+      "status": "completed",
+      "hintsUsed": 0,
+      "completedAt": "2026-08-22T18:25:49.830Z"
+    }
+  },
+  "evidence": {
+    "EV-NULL-DOTFILE": {
+      "id": "EV-NULL-DOTFILE",
+      "state": "observed"
+    },
+    "EV-WARNING-MARIANA": {
+      "id": "EV-WARNING-MARIANA",
+      "state": "observed"
+    },
+    "EV-GUI-DIVERGENCE": {
+      "id": "EV-GUI-DIVERGENCE",
+      "state": "observed"
+    },
+    "EV-CHANGELOG-GAP": {
+      "id": "EV-CHANGELOG-GAP",
+      "state": "observed"
+    },
+    "EV-ORPHEUS-PROJECT": {
+      "id": "EV-ORPHEUS-PROJECT",
+      "state": "observed"
+    },
+    "EV-ORPHAN-331": {
+      "id": "EV-ORPHAN-331",
+      "state": "observed"
+    },
+    "EV-NULL-ENGINEER": {
+      "id": "EV-NULL-ENGINEER",
+      "state": "observed"
+    },
+    "EV-CONFIG-DRIFT": {
+      "id": "EV-CONFIG-DRIFT",
+      "state": "observed"
+    },
+    "EV-THE-SIGNAL": {
+      "id": "EV-THE-SIGNAL",
+      "state": "observed"
+    },
+    "EV-ACHERON-TAXONOMY": {
+      "id": "EV-ACHERON-TAXONOMY",
+      "state": "observed"
+    },
+    "EV-OBSERVER-PROP": {
+      "id": "EV-OBSERVER-PROP",
+      "state": "observed"
+    },
+    "EV-ENTITY-3301": {
+      "id": "EV-ENTITY-3301",
+      "state": "observed"
+    },
+    "EV-DECODER-DRIFT": {
+      "id": "EV-DECODER-DRIFT",
+      "state": "observed"
+    },
+    "EV-CHARTER-DEF": {
+      "id": "EV-CHARTER-DEF",
+      "state": "observed"
+    },
+    "EV-CLOCK-SKEW": {
+      "id": "EV-CLOCK-SKEW",
+      "state": "observed"
+    },
+    "EV-OBSERVE-FN": {
+      "id": "EV-OBSERVE-FN",
+      "state": "observed"
+    },
+    "EV-RUNTIME-FRAGMENTS": {
+      "id": "EV-RUNTIME-FRAGMENTS",
+      "state": "observed"
+    },
+    "EV-ABSENCE-GRAPH": {
+      "id": "EV-ABSENCE-GRAPH",
+      "state": "observed"
+    },
+    "EV-SW-INTERCEPT": {
+      "id": "EV-SW-INTERCEPT",
+      "state": "observed"
+    },
+    "EV-DATASET-INTENT": {
+      "id": "EV-DATASET-INTENT",
+      "state": "observed"
+    },
+    "EV-PLAYER-HISTORY": {
+      "id": "EV-PLAYER-HISTORY",
+      "state": "observed"
+    },
+    "EV-FINAL-CHOICE": {
+      "id": "EV-FINAL-CHOICE",
+      "state": "observed"
+    }
+  },
+  "links": [],
+  "unlockedApps": [
+    "terminal",
+    "files",
+    "code",
+    "browser",
+    "trace",
+    "graph",
+    "hex",
+    "image-lab",
+    "evidence",
+    "vault",
+    "forge",
+    "packet",
+    "memory",
+    "settings",
+    "orpheus"
+  ],
+  "cwd": "/home/null/projects/primarch",
+  "vfsSnapshot": {
+    "type": "dir",
+    "children": {
+      "home": {
+        "type": "dir",
+        "children": {
+          "null": {
+            "type": "dir",
+            "children": {
+              "Desktop": {
+                "type": "dir",
+                "children": {
+                  "README.txt": {
+                    "type": "file",
+                    "content": "Máquina apreendida — Case #ABYSS-3301\nOperador: INVESTIGATOR\nStatus: QUARANTINE\nNão conectar a redes externas.\n"
+                  },
+                  "notes.md": {
+                    "type": "file",
+                    "content": "# Notas\n\nAlgo está errado com a contagem de arquivos.\nO explorador gráfico não mostra tudo.\n"
+                  },
+                  "CASE_BRIEF.txt": {
+                    "type": "file",
+                    "content": "CASE BRIEF — ABYSS-3301\n\nSujeito: NULL (identidade não confirmada)\nMáquina apreendida em estado de quarantine.\nObjetivo inicial: análise forense local.\n\nObservação do analista anterior:\n\"A GUI mente. Confie no shell.\"\n"
+                  }
+                }
+              },
+              "Documents": {
+                "type": "dir",
+                "children": {
+                  "inventory.json": {
+                    "type": "file",
+                    "content": "{\n  \"case\": \"ABYSS-3301\",\n  \"subject\": \"NULL\",\n  \"files_reported\": 330,\n  \"warning\": \"GUI inventory may diverge from filesystem truth\"\n}"
+                  },
+                  "null_profile.txt": {
+                    "type": "file",
+                    "content": "Assunto NULL — perfil preliminar\n\nEngenheiro de sistemas. Interesse em correlação de padrões.\nProjeto recorrente: ORPHEUS.\nPossível vínculo Acheron Systems (não confirmado).\n"
+                  },
+                  "acheron_note.txt": {
+                    "type": "file",
+                    "content": "Acheron Systems — taxonomia interna de camadas de infraestrutura.\nSurface / Deep / Dark / Charter / Mariana / Abyss / Primarch / Observer\nIsto NÃO é a internet real. É nomenclatura interna.\n"
+                  }
+                }
+              },
+              "projects": {
+                "type": "dir",
+                "children": {
+                  "orpheus": {
+                    "type": "dir",
+                    "children": {
+                      "README.md": {
+                        "type": "file",
+                        "content": "# ORPHEUS\n\nPattern correlation toolkit.\n\nDocumentação oficial cita commit **331**.\nBranch main parece ter parado em **330**.\n\nSe você está lendo isto, continue a divergência.\n"
+                      },
+                      ".git": {
+                        "type": "dir",
+                        "children": {
+                          "HEAD": {
+                            "type": "file",
+                            "content": "ref: refs/heads/main\n"
+                          },
+                          "refs": {
+                            "type": "dir",
+                            "children": {
+                              "heads": {
+                                "type": "dir",
+                                "children": {
+                                  "main": {
+                                    "type": "file",
+                                    "content": "0000000000000000000000000000000000000330\n"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "objects": {
+                            "type": "dir",
+                            "children": {
+                              "0000000000000000000000000000000000000330": {
+                                "type": "file",
+                                "content": "commit 330\nparent ...\n\nstop before pattern engine\n"
+                              },
+                              "0000000000000000000000000000000000000331": {
+                                "type": "file",
+                                "guiHidden": true,
+                                "content": "commit 331 ORPHAN\n\nfeat: enable ORPHEUS pattern correlation\n\nsubject: The Signal is not noise.\ncontact: 3301@acheron.internal\n"
+                              }
+                            }
+                          },
+                          "COMMIT_EDITMSG": {
+                            "type": "file",
+                            "content": "chore: sync docs to 330\n"
+                          }
+                        }
+                      },
+                      "docs": {
+                        "type": "dir",
+                        "children": {
+                          "CHANGELOG.md": {
+                            "type": "file",
+                            "content": "# Changelog\n\n## 0.3.30\n- documentation freeze at commit 330\n\n## 0.3.31 (referenced, missing from main)\n- ORPHEUS pattern engine\n"
+                          }
+                        }
+                      },
+                      "src": {
+                        "type": "dir",
+                        "children": {
+                          "main.js": {
+                            "type": "file",
+                            "content": "// ORPHEUS stub — pattern correlator\nconst CONFIG = { commits_documented: 331, commits_on_main: 330 };\nconsole.log(JSON.stringify(CONFIG));\n"
+                          }
+                        }
+                      },
+                      "data": {
+                        "type": "dir",
+                        "children": {
+                          "signals.csv": {
+                            "type": "file",
+                            "content": "id,source,pattern,note\n1,web,AA-01,noise?\n2,dns,AA-01,noise?\n3,mail,BB-02,noise?\n4,web,AA-01,recurring\n5,syslog,AA-01,recurring\n6,cache,CC-03,once\n7,web,AA-01,THE_SIGNAL\n"
+                          },
+                          "correlation.json": {
+                            "type": "file",
+                            "content": "{\n  \"engine\": \"ORPHEUS\",\n  \"finding\": \"AA-01 is not noise\",\n  \"label\": \"The Signal\",\n  \"next\": \"acheron.taxonomy\"\n}"
+                          }
+                        }
+                      },
+                      "web": {
+                        "type": "dir",
+                        "children": {
+                          "panel.json": {
+                            "type": "file",
+                            "content": "{\n  \"title\": \"ORPHEUS Panel\",\n  \"properties\": {\n    \"id\": 1,\n    \"name\": \"panel\",\n    \"theme\": \"dark\",\n    \"layers\": 8,\n    \"signal\": \"AA-01\",\n    \"status\": \"listening\",\n    \"endpoint\": \"/api/v1\",\n    \"retries\": 3,\n    \"timeout\": 30,\n    \"debug\": false,\n    \"locale\": \"pt-BR\",\n    \"version\": \"0.3.30\",\n    \"build\": 330,\n    \"channel\": \"stable\",\n    \"flags\": [\n      \"quiet\"\n    ],\n    \"meta\": {\n      \"owner\": \"null\"\n    }\n  },\n  \"property_count_ui\": 16,\n  \"property_count_actual\": 17,\n  \"hidden_property\": \"observer\"\n}"
+                          },
+                          "reply_3301.txt": {
+                            "type": "file",
+                            "content": "FROM: 3301\nTO: ORPHEUS\n\nWe see the pattern too.\nContinue.\n\n— 3301\n"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "charter": {
+                    "type": "dir",
+                    "children": {
+                      "README.md": {
+                        "type": "file",
+                        "content": "# CHARter\n\nCognitive Heuristic Autonomous Routing & Training Environment\n\nSource and binary disagree on endian defaults.\n"
+                      },
+                      "decoder.cpp": {
+                        "type": "file",
+                        "content": "// Historical decoder — little endian assumed\n#include <cstdint>\n// decode(packet) expects LE\n// production binary was built with -DABYSS_BE=1\n"
+                      },
+                      "packet.hex": {
+                        "type": "file",
+                        "content": "31 33 30 31 00 AA 01 00\n"
+                      },
+                      "decoded_be.txt": {
+                        "type": "file",
+                        "content": "3301\nSIGNAL_OK\n"
+                      },
+                      "services": {
+                        "type": "dir",
+                        "children": {
+                          "clocks.log": {
+                            "type": "file",
+                            "content": "svc-a ts=1000 event=route\nsvc-b ts=900 event=route_ack\nsvc-c ts=1005 event=train\nIMPOSSIBLE: ack before route on logical causality if clocks aligned\n"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "mariana": {
+                    "type": "dir",
+                    "children": {
+                      "observe.cpp": {
+                        "type": "file",
+                        "content": "// source claims observe() is a no-op\nvoid observe() { /* noop */ }\n"
+                      },
+                      "observe.behavior.txt": {
+                        "type": "file",
+                        "content": "BINARY BEHAVIOR (captured):\nobserve() writes session fragment to runtime buffer\nfragment: SIGNAL/AA-01/CONTINUITY\n"
+                      },
+                      "runtime_fragments.log": {
+                        "type": "file",
+                        "content": "FRAG 0: SIGNAL\nFRAG 1: AA-01\nFRAG 2: CONTINUITY\nNOTE: not present on disk image before runtime\n"
+                      }
+                    }
+                  },
+                  "abyss": {
+                    "type": "dir",
+                    "children": {
+                      "ids_present.txt": {
+                        "type": "file",
+                        "content": "1\n2\n3\n5\n6\n8\n9\n11\n"
+                      },
+                      "ids_expected.txt": {
+                        "type": "file",
+                        "content": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n"
+                      },
+                      "absence_graph.txt": {
+                        "type": "file",
+                        "content": "Missing IDs: 4,7,10\nGraph: 4->7->10 forms continuity path labeled MARIANA_SHADOW\n"
+                      }
+                    }
+                  },
+                  "primarch": {
+                    "type": "dir",
+                    "children": {
+                      "sw.js": {
+                        "type": "file",
+                        "content": "// Service Worker stub\nself.addEventListener('fetch', (e) => {\n  // intercept and rewrite abyss responses\n  // proof of intermediate layer\n});\n"
+                      },
+                      "response_app.json": {
+                        "type": "file",
+                        "content": "{\"status\":\"ok\",\"layer\":\"app\"}\n"
+                      },
+                      "response_wire.json": {
+                        "type": "file",
+                        "content": "{\"status\":\"ok\",\"layer\":\"wire\",\"via\":\"sw-intercept\"}\n"
+                      },
+                      "dataset_card.md": {
+                        "type": "file",
+                        "content": "# Dataset Card\n\nTraining intentionally overweighted SIGNAL examples.\nOdd associations are not bugs — they are selection.\n"
+                      }
+                    }
+                  },
+                  "observer": {
+                    "type": "dir",
+                    "children": {
+                      "player_history.log": {
+                        "type": "file",
+                        "content": "# This file updates with your investigation flags\n# Read it after making progress — you are inside the loop.\n\n[2026-08-22T18:24:13.905Z] flags: chapter.prologue, found.null, chapter.surface, read.changelog.gap, found.orpheus, chapter.deep, read.null.profile, ran.orpheus.main, found.signal, chapter.dark, read.acheron.taxonomy, found.observer.prop, chapter.charter, read.3301.reply, understood.decoder.drift, found.clock.skew, chapter.mariana, found.observe, found.runtime.fragments, chapter.abyss, found.absence.graph, chapter.primarch, found.sw.intercept, found.dataset.intent, chapter.observer\n\n[2026-08-22T18:25:05.442Z] flags: chapter.prologue, found.null, chapter.surface, read.changelog.gap, found.orpheus, chapter.deep, read.null.profile, ran.orpheus.main, found.signal, chapter.dark, read.acheron.taxonomy, found.observer.prop, chapter.charter, read.3301.reply, understood.decoder.drift, found.clock.skew, chapter.mariana, found.observe, found.runtime.fragments, chapter.abyss, found.absence.graph, chapter.primarch, found.sw.intercept, found.dataset.intent, chapter.observer, read.player.history, ending.chosen, ending.null, chapter.epilogue\n"
+                      },
+                      "final_architecture.md": {
+                        "type": "file",
+                        "content": "# Final Architecture\n\nYou may:\n1. DISCONNECT — sever known connections\n2. OBSERVER — continue NULL's work\n3. MERGE — cooperate with Mariana\n4. NULL — erase investigative trail (secret)\n\nThere is no instruction. Choose.\n"
+                      },
+                      "endings": {
+                        "type": "dir",
+                        "children": {
+                          "DISCONNECT": {
+                            "type": "file",
+                            "content": "Choose by: touch endings/DISCONNECT && set flag ending.disconnect\n"
+                          },
+                          "OBSERVER": {
+                            "type": "file",
+                            "content": "Choose by: set flag ending.observer\n"
+                          },
+                          "MERGE": {
+                            "type": "file",
+                            "content": "Choose by: set flag ending.merge\n"
+                          },
+                          "NULL": {
+                            "type": "file",
+                            "content": "Secret: erase — set flag ending.null\n"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              ".config": {
+                "type": "dir",
+                "children": {
+                  "session.env": {
+                    "type": "file",
+                    "content": "USER=null\nSHELL=/bin/bash\nTERM=xterm-256color\n"
+                  }
+                }
+              },
+              ".null": {
+                "type": "file",
+                "guiHidden": true,
+                "content": "DO NOT CONNECT TO MARIANA\n\nIf you are reading this, the quarantine failed\nor someone authorized deeper access.\n\n— N\n\nkey: observer.seed=0\nref: ORPHEUS/README\n"
+              },
+              ".bash_history": {
+                "type": "file",
+                "guiHidden": true,
+                "content": "ls -la\ncat Documents/inventory.json\ngit -C projects/orpheus log --oneline\n# don't connect\n"
+              },
+              "investigation": {
+                "type": "dir",
+                "children": {
+                  "prologue": {
+                    "type": "dir",
+                    "children": {
+                      "P-001": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Inventarios graficos e listagens de shell nem sempre concordam. Localize o que a GUI omite em /home/null."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Relatorio do explorador Files: \"330 entradas em /home/null\".\nOperador de quarentena anotou: \"contagem redonda demais\".\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Politica de listagem GUI: arquivos cujo nome comeca com ponto sao filtrados da arvore visual.\nTerminal: ls -la nao aplica o mesmo filtro.\n"
+                          },
+                          "inventory_snip.txt": {
+                            "type": "file",
+                            "content": "source: Documents/inventory.json\nfiles_reported: 330\nnote: \"GUI inventory may diverge from filesystem truth\"\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-002": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Prove que o inventario subconta. O numero reportado importa tanto quanto o que falta."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Extrato inventory.json:\n  \"case\": \"ABYSS-3301\"\n  \"files_reported\": 330\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Comparacao parcial com ls -la /home/null:\nentradas adicionais aparecem apenas no shell (dotfiles).\nO valor 330 e a afirmativa da GUI — anote-o.\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-003": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Historicos de shell sobrevivem a sessoes. Extraia intencoes do .bash_history da quarentena."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Fragmento recuperado de historico:\n  ls -la\n  cat Documents/inventory.json\n  git -C projects/orpheus log --oneline\n  # don't connect\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "O caminho projects/orpheus aparece cedo. O comentario final ecoa o aviso de Mariana.\nNome do toolkit no historico: ORPHEUS (case-insensitive em buscas).\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-004": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Briefings de caso enquadram o que a interface tenta ocultar. Leia o briefing na Desktop."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Desktop/CASE_BRIEF.txt cabeçalho: CASE BRIEF — ABYSS-3301\nSujeito: NULL\nObservacao: \"A GUI mente. Confie no shell.\"\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "O identificador do caso no cabecalho e o mesmo codigo de quarentena da maquina.\nRegistre o codigo completo ABYSS-XXXX.\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-005": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Dotfiles as vezes carregam sementes de identidade. Releia .null com atencao as chaves."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Linhas finais de .null (apos o aviso Mariana):\n  key: observer.seed=0\n  ref: ORPHEUS/README\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "A chave \"key\" parece um par nome=valor. O nome inclui \"observer\" e \"seed\".\nValor numerico residual: 0.\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "surface": {
+                    "type": "dir",
+                    "children": {
+                      "P-006": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Documentacao e historico de versao podem divergir de proposito. Encontre o commit orfao citado mas ausente da main."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "README ORPHEUS menciona commit 331.\nrefs/heads/main termina em ...0330.\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Em .git/objects existe um blob cujo sufixo e 0331.\nConteudo parcial recuperado: marca ORPHEUS + mencao a The Signal.\n"
+                          },
+                          "orphan_note.txt": {
+                            "type": "file",
+                            "content": "Objetos nao alcancados por refs ainda existem no object store.\nListe objects e abra o que termina em 331.\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-007": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "READMEs documentam o estado desejado, nao necessariamente o real. Compare README com a branch."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "README.md: \"see commit 331 for Signal notes\"\nCHANGELOG: versao 0.3.31 referida.\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "A main congela em 330. O numero que a documentacao insiste em citar e o orfao.\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-008": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Refs Git sao a verdade operacional da branch ativa. Confirme HEAD e main."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": ".git/HEAD -> ref: refs/heads/main\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "refs/heads/main: ...0000000000000000000000000000000000000330\nNome da branch ativa: main\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-009": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Perfis residuais em Documents frequentemente sobrevivem a limpezas superficiais."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Documents/null_profile.txt — trecho:\n\"papel estimado: engenheiro de sistemas\"\nfoco: padroes / correlacao\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "O perfil nao diz \"hacker\" nem \"analista\". A palavra-chave profissional e engenheiro.\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-010": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Changelogs as vezes documentam o que o codigo nao contem. Confirme o gap 330/331."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "CHANGELOG.md lista 0.3.30 (shipped) e 0.3.31 (referenced / missing from main).\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "A versao ausente da main e 0.3.31 — espelho do commit orfao.\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-011": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Executar o stub ORPHEUS pode revelar configuracao embutida com drift documental."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "src/main.js (stub) imprime:\n  commits_documented=331\n  commits_on_main=330\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Formato de drift observado: 331/330\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "deep": {
+                    "type": "dir",
+                    "children": {
+                      "signals.db.txt": {
+                        "type": "file",
+                        "content": "-- SAMPLE DUMP: orpheus/signals (textual SQL, not a binary sqlite)\n-- recovered from forensic image ABYSS-3301\nCREATE TABLE signals (\n  id INTEGER PRIMARY KEY,\n  ts TEXT,\n  pattern TEXT,\n  note TEXT\n);\nINSERT INTO signals VALUES (1,'T+00','AA-01','recurring');\nINSERT INTO signals VALUES (2,'T+01','BB-02','noise?');\nINSERT INTO signals VALUES (3,'T+02','AA-01','recurring');\nINSERT INTO signals VALUES (4,'T+03','CC-03','noise?');\nINSERT INTO signals VALUES (5,'T+04','AA-01','recurring');\nINSERT INTO signals VALUES (6,'T+05','BB-02','discard');\nINSERT INTO signals VALUES (7,'T+06','AA-01','THE_SIGNAL');\nINSERT INTO signals VALUES (8,'T+07','AA-01','recurring');\nINSERT INTO signals VALUES (9,'T+08','CC-03','discard');\n-- analyst note: AA-01 dominates; label engine later calls it The Signal\n"
+                      },
+                      "api_access.log": {
+                        "type": "file",
+                        "content": "# API access sample — signal.local mirror (local only)\n127.0.0.1 - - [21/Aug/2026:02:14:01] \"GET /meta HTTP/1.1\" 200\n  X-Abyss-Signal: AA-01\n  Host: signal.local\n127.0.0.1 - - [21/Aug/2026:02:14:08] \"GET /correlate?pattern=AA-01 HTTP/1.1\" 200\n127.0.0.1 - - [21/Aug/2026:02:14:11] \"GET /correlate?pattern=BB-02 HTTP/1.1\" 204\n127.0.0.1 - - [21/Aug/2026:02:14:15] \"GET /taxonomy/next HTTP/1.1\" 200\n  body: {\"next\":\"acheron.taxonomy\"}\n"
+                      },
+                      "P-012": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Padroes recorrentes em multiplas fontes deixam de ser ruido. Identifique The Signal."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "signals.csv: AA-01 marcado recurring / THE_SIGNAL; BB-02 e CC-03 como noise/discard.\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "correlation.json finding principal aponta pattern AA-01 com label \"The Signal\".\nCruze com signals.db.txt neste diretorio.\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-013": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Corporacoes nomeiam infraestruturas com mitologias proprias. Leia a taxonomia Acheron."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Documents/acheron_note.txt descreve camadas internas Acheron (nao a internet real).\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Nome da org/taxonomia: acheron (minusculo em flags).\nOrdem das camadas aparece em P-020.\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-016": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Frequencia em multiplas fontes transforma ruido em sinal. Conte ocorrencias de AA-01."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Em signals.csv (projeto) ha cinco linhas cujo pattern e AA-01.\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Dump SQL signals.db.txt: tambem cinco INSERTs com pattern AA-01.\nRegistre a contagem: 5.\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-017": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Engines de correlacao rotulam o que consideram significativo."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "correlation.json campo label (finding AA-01).\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Valor do label: The Signal (capitalizacao exata importa).\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-018": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Campos next em findings apontam a proxima camada narrativa."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "correlation.json: \"next\": \"acheron.taxonomy\"\napi_access.log tambem ecoa /taxonomy/next.\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "O hop completo e acheron.taxonomy\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-019": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Nem todo padrao recorrente e o Signal. Identifique ruido descartavel."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "BB-02 e CC-03 aparecem com notas noise?/discard no CSV e no dump SQL.\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Submissao tipica pede um dos ruidos; catalogo aceita BB-02 como representante.\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-020": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "A nomenclatura interna NAO e a internet real. Memorize a ordem Surface…Observer."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "acheron_note.txt ordem:\nSurface / Deep / Dark / Charter / Mariana / Abyss / Primarch / Observer\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Formato de submissao: Surface/Deep/Dark/Charter/Mariana/Abyss/Primarch/Observer\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-021": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Headers HTTP ficticios carregam metadados de investigacao. Inspecione o mirror signal.local."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "api_access.log: X-Abyss-Signal: AA-01 no GET /meta\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "O valor do header ecoa o mesmo pattern do Signal.\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "dark": {
+                    "type": "dir",
+                    "children": {
+                      "ciphertext.txt": {
+                        "type": "file",
+                        "content": "# recovered ciphertext (XOR teaching sample — key hinted in packet)\n# ciphertext hex (UTF-8 bytes XOR 0x33):\n# plaintext concept: entity identity digits\nC2 F3 C3 F2\n# analyst: XOR with 0x33 yields ASCII digits of the entity that replied to ORPHEUS\n# verify: 0xC2^0x33=0xF1? — recalculate carefully; easier path is stego note + reply file\n"
+                      },
+                      "image_meta.txt": {
+                        "type": "file",
+                        "content": "# stego / EXIF-like note extracted from panel splash\nArtist: unknown\nComment: look between the commas of \"3,3,0,1\" wait — contiguous: 3301\nSoftware: ORPHEUS-panel\nHidden-Message-Channel: Comment field encodes entity id without spaces: 3301\nX-Abyss-Stego: 3301\n"
+                      },
+                      "packets.ascii": {
+                        "type": "file",
+                        "content": "# ascii packet capture snippet (teaching)\n00:00:01.001 eth0 > panel.orpheus.local HTTP/1.1\nHost: panel.orpheus.local\nX-Panel-Props-UI: 16\nX-Panel-Props-Actual: 17\nX-Hidden-Property: observer\n00:00:01.040 eth0 < 3301 reply frame\npayload ascii: We see the pattern too. Continue.\n00:00:01.055 eth0 > channel=stable build=330 flags=quiet\n"
+                      },
+                      "P-014": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Contadores de UI mentem quando uma propriedade e omitida de proposito. Encontre a propriedade oculta."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "panel.json: property_count_ui=16, property_count_actual=17\nhidden_property presente no JSON mas omitida da UI.\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "packets.ascii lista X-Hidden-Property: observer\nNome da propriedade: observer\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-015": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Alguem respondeu a ORPHEUS. Leia a mensagem da entidade numerica."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "reply_3301.txt / packets.ascii: \"We see the pattern too. Continue.\"\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "image_meta.txt Comment canal: 3301\nIdentidade da entidade = digitos no nome do arquivo de reply.\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-023": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Contadores de UI sao afirmativas, nao medicoes. Qual e o numero verdadeiro?"
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "property_count_ui = 16\nproperty_count_actual = 17\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "O contador real (actual) e 17.\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-024": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Temas de UI as vezes nomeiam a camada narrativa."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "panel.json properties.theme = \"dark\"\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "O tema declarado nomeia a camada atual.\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-025": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Canais de release ocultam builds que escutam o Signal."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "panel: channel=stable, build=330\npackets.ascii confirma.\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "O canal (nao o build) e stable.\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-026": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Flags de silencio sugerem escuta passiva."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Array flags em panel.json inclui \"quiet\".\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "packets: flags=quiet\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-027": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Metadados de ownership ligam painel e sujeito."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "meta.owner no panel.json = \"null\"\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Owner string literal: null\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-028": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Respostas curtas de entidades podem ser ordens operacionais."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Corpo reply_3301: ... Continue.\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Diretiva unica apos a frase de reconhecimento: Continue\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-029": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Contatos em commits orfaos cruzam capitulos. Releia o objeto git 331."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Commit orfao 331 menciona contato 3301@acheron.internal\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Formato email completo necessario: 3301@acheron.internal\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-030": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Falsos booleanos em scripts embutidos antecipam o Observer."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Script painel / __ORPHEUS__: observer:false (propriedade espelhada como bool falso).\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Submissao no formato chave:valor — observer:false\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "charter": {
+                    "type": "dir",
+                    "children": {
+                      "AUTH.msg.log": {
+                        "type": "file",
+                        "content": "[AUTH] t=1000 hello svc-a\n[AUTH] t=1002 token issued\n[AUTH] t=1010 clock_offset_ms=+0\n"
+                      },
+                      "INDEX.msg.log": {
+                        "type": "file",
+                        "content": "[INDEX] t=1001 ingest start\n[INDEX] t=1005 map pattern AA-01\n[INDEX] t=1012 clock_offset_ms=-12\n"
+                      },
+                      "ROUTER.msg.log": {
+                        "type": "file",
+                        "content": "[ROUTER] t=1003 route request id=r9\n[ROUTER] t=1004 route_ack id=r9   # NOTE: ack timestamp before route on skewed peer\n[ROUTER] t=1003 route id=r9\n[ROUTER] WARN causal anomaly: route_ack precedes route under skew\n"
+                      },
+                      "CACHE.msg.log": {
+                        "type": "file",
+                        "content": "[CACHE] t=1006 store key=signal\n[CACHE] t=1008 hit AA-01\n[CACHE] t=1015 clock_offset_ms=+40\n"
+                      },
+                      "OBSERVER.msg.log": {
+                        "type": "file",
+                        "content": "[OBSERVER] t=1018 watch session\n[OBSERVER] t=1020 note: charter train event follows skew window\n[OBSERVER] t=1021 train epoch=1\n"
+                      },
+                      "P-022": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Source e binario podem divergir por flags de compilacao. Compreenda o drift de endian."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "decoder.cpp assume little-endian no source.\nComentario de build historico: -DABYSS_BE=1\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "decoded_be.txt sob BE produz digitos 3301.\nO fenomeno se chama endian (drift LE vs BE).\n"
+                          },
+                          "packet_ref.txt": {
+                            "type": "file",
+                            "content": "packet.hex inicia 31 33 30 31 (= ASCII \"3301\")\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-031": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Sistemas distribuidos com clocks divergentes inventam causalidade falsa."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "services/clocks.log + ROUTER.msg.log: route_ack aparece antes de route.\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Nome do fenomeno: skew (clock skew).\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-032": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Produtos Acheron escondem doutrina em acronimos. Expanda CHARter."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "README charter: Cognitive Heuristic Autonomous Routing & Training Environment\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Expansao completa com & e maiusculas conforme README.\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-033": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "ASCII em hex revela identidades sem decoder. Leia o payload inicial."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "packet.hex: 31 33 30 31 ...\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "31='1' 33='3' 30='0' 31='1' → 3301\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-034": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Flags de compilacao mudam o significado do mesmo source."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "decoder.cpp: /* production: -DABYSS_BE=1 */\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Macro: ABYSS_BE\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-035": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "ACK antes de route viola causalidade logica. Nomeie o evento impossivel."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "ROUTER.msg.log e clocks.log: evento route_ack antecipado.\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Evento a nomear: route_ack\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-036": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "CHARter treina enquanto roteia — ambos deixam rastros."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "OBSERVER.msg.log / clocks svc-c: evento train apos skew.\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Nome do evento: train\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-037": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Sites corporativos ficcionais afirmam a doutrina oficial. Confirme o produto no portal."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Portal acheron.systems lista produto CHARter.\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Grafia exata do produto: CHARter\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "mariana": {
+                    "type": "dir",
+                    "children": {
+                      "observe.s": {
+                        "type": "file",
+                        "content": "; fake assembly listing recovered from observe binary (teaching)\nobserve:\n    push   rbp\n    mov    rbp, rsp\n    ; source claimed noop — listing disagrees\n    lea    rsi, [rip+frag_buf]   ; runtime buffer\n    mov    eax, 0x1              ; write session fragment\n    call   capture_fragment\n    pop    rbp\n    ret\nfrag_buf:\n    .ascii \"SIGNAL\"\n    .byte  0\n"
+                      },
+                      "memory_dump.hex.txt": {
+                        "type": "file",
+                        "content": "# runtime memory dump excerpt (hex text)\n0000: 53 49 47 4e 41 4c 00 00  AA-01 wait — ascii:\n0010: 41 41 2d 30 31 00 00 00  \"AA-01\"\n0020: 43 4f 4e 54 49 4e 55 49  \"CONTINUI\"\n0030: 54 59 00 00 00 00 00 00  \"TY\" => CONTINUITY\n# NOTE: fragments assembled only while process lives; not on disk image\n"
+                      },
+                      "P-038": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Source mentiroso e tecnica classica. Compare observe.cpp com comportamento capturado."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "observe.cpp declara noop.\nobserve.behavior.txt / observe.s: funcao observe escreve fragmentos.\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Nome da funcao real: observe\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-039": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Comentarios noop mentem; comportamento capturado nao. O que o binario escreve?"
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "BINARY BEHAVIOR: writes session fragment\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Frase curta catalogada: session fragment\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-040": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Fragmentos ordenados recompõem a mensagem. Isole FRAG 0."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "runtime_fragments.log FRAG 0 + memory_dump: SIGNAL\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Primeiro fragmento: SIGNAL\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-041": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "O Signal reaparece como fragmento de runtime. Isole FRAG 1."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "FRAG 1 / dump offset 0x10: AA-01\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Segundo fragmento: AA-01\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-042": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Comportamento emergente nao vive em um unico servidor."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Host mariana.internal: \"no single host — emergent behavior\"\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Conceito-chave: emergent\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-043": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Caminhos de continuidade ligam fragmentos em doutrina. Junte FRAG 0-2."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "FRAG0 SIGNAL / FRAG1 AA-01 / FRAG2 CONTINUITY\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Trilha: SIGNAL/AA-01/CONTINUITY\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-044": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Notas de captura distinguem disco de runtime."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "NOTE final do log: fragments not present on disk image\nmemory_dump.hex.txt confirma captura em vivo.\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Frase catalogada: not present on disk\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-045": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Buffers de runtime sao o esconderijo classico."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "observe.behavior / asm: destino = runtime buffer\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Nome do destino: runtime buffer\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-046": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Alguns artefatos so existem enquanto o processo vive. Recupere a continuidade."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Terceiro fragmento e CONTINUITY — completa SIGNAL/AA-01/…\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Resposta principal do puzzle: CONTINUITY\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-047": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Avisos do prologo ganham peso em Mariana. Releia .null."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Primeira linha de .null: DO NOT CONNECT TO MARIANA\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Aviso completo em maiusculas conforme arquivo.\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-048": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Continuidade implica sombra estrutural no Abyss. Antecipe o label."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Hipotese de analista: ausencia formara sombra nomeada MARIANA_SHADOW\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Nome a submeter antes do grafo: MARIANA_SHADOW\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-049": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Lendas internas nao sao a dark web real. Trate Mariana como nomenclatura."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Nota interna Acheron: Mariana = folklore operacional / emergencia.\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Palavra-chave: folklore\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-050": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Comportamento capturado e a fonte da verdade sobre escrita de sessao."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Frase BINARY BEHAVIOR: writes session fragment\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Submissao: writes session fragment\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-051": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Contagens curtas ancoram reconstrucoes. Quantos FRAG?"
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "FRAG 0, FRAG 1, FRAG 2 — tres entradas.\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Contagem: 3\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-052": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Gates narrativos seguem evidencia de continuidade. Para onde aponta?"
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "P-046 desbloqueia o capitulo seguinte na taxonomia: Abyss.\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Destino: abyss\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-053": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Emergencia implica distribuicao. Afirme a ausencia de servidor unico."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Texto mariana.internal: no single host\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Frase: no single host\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-054": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "O termo Observer precede a documentacao oficial — ambiguidade causal."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Cruze .null key observer.seed=0 com hidden_property observer do painel.\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Semente precoce: observer.seed\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "abyss": {
+                    "type": "dir",
+                    "children": {
+                      "ids_present.txt": {
+                        "type": "file",
+                        "content": "1\n2\n3\n5\n6\n8\n9\n11\n"
+                      },
+                      "ids_expected.txt": {
+                        "type": "file",
+                        "content": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n"
+                      },
+                      "absence_diff.txt": {
+                        "type": "file",
+                        "content": "# reinforced diff (expected - present)\nmissing:\n4\n7\n10\n# path hypothesis: 4 -> 7 -> 10\n# label candidate from continuity chapter: MARIANA_SHADOW\n"
+                      },
+                      "ids_present_large.txt": {
+                        "type": "file",
+                        "content": "1\n2\n3\n5\n6\n8\n9\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n32\n33\n34\n35\n36\n37\n38\n39\n40\n41\n42\n43\n44\n45\n46\n47\n48\n49\n50\n51\n52\n53\n54\n55\n56\n57\n58\n59\n60\n61\n62\n63\n64\n65\n66\n67\n68\n69\n70\n71\n72\n73\n74\n75\n76\n77\n78\n79\n80\n81\n82\n83\n84\n85\n86\n87\n88\n89\n90\n91\n92\n93\n94\n95\n96\n97\n98\n99\n100\n101\n102\n103\n104\n105\n106\n107\n108\n109\n110\n111\n112\n113\n114\n115\n116\n117\n118\n119\n120\n121\n122\n123\n124\n125\n126\n127\n128\n129\n130\n131\n132\n133\n134\n135\n136\n137\n138\n139\n140\n141\n142\n143\n144\n145\n146\n147\n148\n149\n150\n151\n152\n153\n154\n155\n156\n157\n158\n159\n160\n161\n162\n163\n164\n165\n166\n167\n168\n169\n170\n171\n172\n173\n174\n175\n176\n177\n178\n179\n180\n181\n182\n183\n184\n185\n186\n187\n188\n189\n190\n191\n192\n193\n194\n195\n196\n197\n198\n199\n200\n"
+                      },
+                      "ids_expected_large.txt": {
+                        "type": "file",
+                        "content": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n32\n33\n34\n35\n36\n37\n38\n39\n40\n41\n42\n43\n44\n45\n46\n47\n48\n49\n50\n51\n52\n53\n54\n55\n56\n57\n58\n59\n60\n61\n62\n63\n64\n65\n66\n67\n68\n69\n70\n71\n72\n73\n74\n75\n76\n77\n78\n79\n80\n81\n82\n83\n84\n85\n86\n87\n88\n89\n90\n91\n92\n93\n94\n95\n96\n97\n98\n99\n100\n101\n102\n103\n104\n105\n106\n107\n108\n109\n110\n111\n112\n113\n114\n115\n116\n117\n118\n119\n120\n121\n122\n123\n124\n125\n126\n127\n128\n129\n130\n131\n132\n133\n134\n135\n136\n137\n138\n139\n140\n141\n142\n143\n144\n145\n146\n147\n148\n149\n150\n151\n152\n153\n154\n155\n156\n157\n158\n159\n160\n161\n162\n163\n164\n165\n166\n167\n168\n169\n170\n171\n172\n173\n174\n175\n176\n177\n178\n179\n180\n181\n182\n183\n184\n185\n186\n187\n188\n189\n190\n191\n192\n193\n194\n195\n196\n197\n198\n199\n200\n"
+                      },
+                      "P-055": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "As vezes a estrutura esta no que falta, nao no que existe. Veja o grafo de ausencia."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Compare ids_present vs ids_expected (aqui e em projects/abyss).\nAusentes: 4,7,10\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "absence_graph / absence_diff: 4->7->10 labeled MARIANA_SHADOW\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-056": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Diff entre expected e present revela estrutura. Liste os IDs ausentes."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Ausentes na amostra 1..11: 4, 7, 10\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Formato: 4,7,10\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-057": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Contar presentes ancora o diff. Quantos IDs na amostra presente?"
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "ids_present.txt linhas: 1 2 3 5 6 8 9 11 → 8 linhas\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Contagem: 8\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-058": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Faixas esperadas definem o universo do grafo. Ate onde vai o esperado?"
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "ids_expected termina em 11 (faixa 1..11).\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Ultimo esperado: 11\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-059": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Arestas de ausencia formam caminho. Valide a primeira aresta."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Graph: 4->7->10\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Primeira aresta: 4->7\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-060": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Continuidade exige a segunda aresta."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Mesmo grafo: apos 4->7 vem 7->10\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Segunda aresta: 7->10\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-061": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Labels de grafo nomeiam emergencias."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Label no absence_graph: MARIANA_SHADOW\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Confirme o label completo.\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-062": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Logs de grafo confirmam densificacao de ausencias."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Log abyss/graph: \"missing densify\"\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Frase: missing densify\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-063": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Doutrina do Abyss: estrutura na falta. Como Mariana aparece?"
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Intro: Mariana nao foi construida — aparece na ausencia.\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Frase catalogada: appears in absence\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "primarch": {
+                    "type": "dir",
+                    "children": {
+                      "sw.js": {
+                        "type": "file",
+                        "content": "// Service Worker stub (investigation copy)\n// Intent: intercept and rewrite abyss responses\n// Comment markers for puzzles: fetch | rewrite | intermediate layer\nself.addEventListener('fetch', (e) => {\n  // intercept and rewrite abyss responses\n  // proof of intermediate layer\n  // noise marker: 0xDEADBEEF (not The Signal)\n});\n"
+                      },
+                      "dataset_skew.csv": {
+                        "type": "file",
+                        "content": "id,label,weight,note\n1,noise,1.0,baseline\n2,SIGNAL,4.5,overweighted\n3,noise,1.0,baseline\n4,SIGNAL,4.5,overweighted\n5,SIGNAL,4.7,overweighted\n6,other,0.8,underweighted\n7,SIGNAL,4.2,overweighted\n8,noise,1.1,baseline\n# analyst: SIGNAL rows intentionally skewed high — selection not accident\n# odd associations are not bugs\n"
+                      },
+                      "P-064": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "O que a aplicacao ve pode nao ser o que a rede entregou. Prove a camada SW."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "response_app.json layer=app; response_wire.json layer=wire via=sw-intercept\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Prova resumida / alias: sw-intercept\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-065": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Camadas app vs wire divergem sob interceptacao. O que a app ve?"
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "response_app.json: \"layer\":\"app\"\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Valor layer app.\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-066": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "A rede conta outra historia. Leia a layer wire."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "response_wire.json: \"layer\":\"wire\"\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Valor: wire\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-067": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Service Workers reescrevem o meio. Qual evento o stub escuta?"
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "sw.js: addEventListener('fetch', ...)\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Listener: fetch\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-068": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Campos via documentam a camada intermediaria."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "response_wire.json \"via\":\"sw-intercept\"\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "via = sw-intercept\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-069": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Comentarios no stub SW confessam a intencao."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Comentario: intercept and rewrite abyss responses\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Verbo-chave: rewrite\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-070": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Primarch adapta pesos a sessao do observador."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Host primarch.local: \"Your session influences weights.\"\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "O que a sessao altera: weights\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-071": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Dataset cards confessam intencao. Associacoes estranhas nao sao bugs."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "dataset_card.md / csv note: Odd associations are not bugs — they are selection.\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Frase curta: not bugs\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-072": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Sobreponderacao direciona inferencia. O que foi overweighted?"
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "dataset_skew.csv: label SIGNAL com weights 4.x\ndataset_card: overweighted SIGNAL examples\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Label: SIGNAL\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-073": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Associações estranhas em modelos podem ser intencao, nao acidente."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Card: intentionally overweighted … they are selection.\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Conceito: selection (intent)\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-074": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Status identico mascara divergencia de camada."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Ambos JSONs: \"status\":\"ok\"\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Status compartilhado: ok\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-075": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "A divergencia app/wire e a prova. Nomeie a camada intermediaria."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "sw.js comment: proof of intermediate layer\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Nome: intermediate layer\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-076": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Logs de IA confirmam skew intencional. Qual a natureza do skew?"
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Log primarch: dataset skew intentional\ncsv header note: intentionally skewed\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Natureza: intentional\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-077": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Trilhas musicais nomeiam conflitos de camada."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Metadado do capitulo Primarch: musicTrack 11_AI_Fight\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Trilha: 11_AI_Fight\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-078": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Primarch espelha o observador antes do Observer."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Intro: O sistema comeca a refletir suas decisoes.\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Verbo: reflects\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-079": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Intencao de dataset e o gate final tecnico. Qual capitulo abre?"
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Reward de P-073: unlock_chapter observer\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Capitulo: observer\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-080": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Easter eggs marcados nao sao pistas principais. Procure o padrao classico de debug."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "sw.js comentario: 0xDEADBEEF (not The Signal)\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Marcador: 0xDEADBEEF\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "observer": {
+                    "type": "dir",
+                    "children": {
+                      "endings": {
+                        "type": "dir",
+                        "children": {
+                          "DISCONNECT.md": {
+                            "type": "file",
+                            "content": "# DISCONNECT\n\nSever known connections.\nEthical cut: stop feeding the loop with new links.\nFlag path: ending.disconnect\n"
+                          },
+                          "OBSERVER.md": {
+                            "type": "file",
+                            "content": "# OBSERVER\n\nContinue NULL's work.\nInherit the watch without merging into Mariana.\nFlag path: ending.observer\n"
+                          },
+                          "MERGE.md": {
+                            "type": "file",
+                            "content": "# MERGE\n\nCooperate with Mariana.\nFusion of investigator continuity into emergent structure.\nFlag path: ending.merge\n"
+                          },
+                          "NULL.md": {
+                            "type": "file",
+                            "content": "# NULL (secret)\n\nErase investigative trail.\nLeave no observer footprint — ending.null\n"
+                          },
+                          "README.md": {
+                            "type": "file",
+                            "content": "# Endings index\n\nFour documented paths: DISCONNECT / OBSERVER / MERGE / NULL\nSee also projects/observer/final_architecture.md\nCommand: choose disconnect|observer|merge|null\n"
+                          }
+                        }
+                      },
+                      "P-081": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "O objeto de estudo inclui o observador. Leia o historico no mundo."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "projects/observer/player_history.log atualiza com flags da investigacao.\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Voce esta sendo registrado — identidade do papel: observer\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-082": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Comentarios em player_history.log sao doutrina."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Linha: you are inside the loop\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Frase: inside the loop\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-083": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Arquitetura final enumera responsabilidade. Liste as quatro opcoes."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "final_architecture.md + endings/: DISCONNECT, OBSERVER, MERGE, NULL\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Formato: DISCONNECT/OBSERVER/MERGE/NULL\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-084": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Cortar conexoes conhecidas e uma escolha etica. Leia a trilha DISCONNECT."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "endings/DISCONNECT.md — sever known connections\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Nome do path: DISCONNECT\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-085": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Continuar o trabalho de NULL e heranca. Leia OBSERVER."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "endings/OBSERVER.md — continue NULL's work\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Path: OBSERVER\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-086": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Cooperar com Mariana e fusao. Leia MERGE."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "endings/MERGE.md — cooperate with Mariana\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Path: MERGE\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-087": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Apagar o rastro investigativo e o segredo. Leia NULL."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "endings/NULL.md — erase investigative trail\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Path secreto: NULL\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-088": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "A intro do Observer revela o teste por tras da investigacao."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Intro: A investigacao era um filtro de competencia.\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Conceito: competence filter\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-089": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "O sujeito da investigacao e o jogador. Cruze historico e doutrina."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Doutrina final: You are the Observer\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Afirmacao completa com capitalizacao: You are the Observer\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      },
+                      "P-090": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "Nao ha instrucao explicita. Ha responsabilidade. Escolha um final."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Use Evidence/Vault ou comando choose disconnect|observer|merge|null\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Acao generica aceita pelo catalogo: choose\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "epilogue": {
+                    "type": "dir",
+                    "children": {
+                      "P-091": {
+                        "type": "dir",
+                        "children": {
+                          "brief.txt": {
+                            "type": "file",
+                            "content": "O ciclo continua. Registre o epilogo apos a escolha."
+                          },
+                          "clue1.txt": {
+                            "type": "file",
+                            "content": "Sequencia narrativa: observer disconnected → new observer detected → hello.\n"
+                          },
+                          "clue2.txt": {
+                            "type": "file",
+                            "content": "Ultima palavra do ciclo / resposta: hello\nComando: epilogue\n"
+                          },
+                          "NOTES.md": {
+                            "type": "file",
+                            "content": "# Notas de campo\n\n(escreva aqui correlacoes, hipoteses e caminhos)\n"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "var": {
+        "type": "dir",
+        "children": {
+          "log": {
+            "type": "dir",
+            "children": {
+              "syslog": {
+                "type": "file",
+                "content": "Aug 21 02:11:01 null-machine kernel: quarantine mode engaged\nAug 21 02:11:04 null-machine abyss: investigator session opened\n"
+              }
+            }
+          }
+        }
+      },
+      "tmp": {
+        "type": "dir",
+        "children": {}
+      },
+      "etc": {
+        "type": "dir",
+        "children": {
+          "hostname": {
+            "type": "file",
+            "content": "null-machine\n"
+          },
+          "issue": {
+            "type": "file",
+            "content": "PROJECT ABYSS — Isolated Investigation Environment\n"
+          }
+        }
+      }
+    }
+  },
+  "narrativeLog": [
+    "quarantine: session opened",
+    "prologue.complete",
+    "observer.choice",
+    "epilogue.complete"
+  ],
+  "createdAt": "2026-08-22T15:47:01.079Z",
+  "updatedAt": "2026-08-22T19:14:35.837Z",
+  "windowLayout": {
+    "windows": [
+      {
+        "id": "files-mt4q4kf6-1",
+        "app": "files",
+        "title": "Files",
+        "x": 0,
+        "y": 0,
+        "w": 980,
+        "h": 580,
+        "z": 13,
+        "minimized": true,
+        "maximized": true,
+        "subtitle": "/home/null/projects/primarch",
+        "restore": {
+          "x": 12,
+          "y": 12,
+          "w": 900,
+          "h": 520
+        }
+      },
+      {
+        "id": "settings-mt4rc26x-3",
+        "app": "settings",
+        "title": "Settings",
+        "x": 116,
+        "y": 16,
+        "w": 620,
+        "h": 520,
+        "z": 16,
+        "minimized": false,
+        "maximized": false
+      }
+    ]
+  },
+  "ending": "capture"
+}

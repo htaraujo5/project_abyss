@@ -1,0 +1,32 @@
+[
+  {
+    "id": "m6L5hKphY6Ex",
+    "username": "shawnark",
+    "displayName": "shawnark",
+    "salt": "951e1e0e93c11b58364dcb638c64d501",
+    "hash": "667fae7c26506645e47551d002b362090f2cd3a2612c4a1ca043d3d4b2ea39c3",
+    "createdAt": "2026-08-22T15:47:01.069Z"
+  },
+  {
+    "id": "WmOpACs-zfVI",
+    "username": "helisson",
+    "displayName": "Helisson",
+    "fullName": "Helisson Ferreira",
+    "email": "helisson@abyss.test",
+    "contact": "+55 11 99999-0000",
+    "salt": "9918e59d25d8baed9b8ed8f777b4c2e3",
+    "hash": "a49821a77283d481954b69147bd7aa02382fcbfecc3ba9fa70215bd06195f01f",
+    "createdAt": "2026-08-22T17:15:11.566Z"
+  },
+  {
+    "id": "TH5be7mYehLu",
+    "username": "analista884341",
+    "displayName": "Helisson",
+    "fullName": "Helisson Ferreira",
+    "email": "analista884341@abyss.test",
+    "contact": "+55 11 99999-0000",
+    "salt": "0952c29b30c37fb41899f88a8a434484",
+    "hash": "9fc25a7e9819347afb976ee7fd7121fcb30a36717478ea7de40b6560ba05094b",
+    "createdAt": "2026-08-22T17:31:27.263Z"
+  }
+]
