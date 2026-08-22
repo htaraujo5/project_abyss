@@ -227,18 +227,6 @@ export const EvidenceDefinitionSchema = z.object({
 });
 export type EvidenceDefinition = z.infer<typeof EvidenceDefinitionSchema>;
 
-export const VfsNodeSchema: z.ZodType<VfsNode> = z.lazy(() =>
-  z.object({
-    type: z.enum(['file', 'dir']),
-    content: z.string().optional(),
-    binaryBase64: z.string().optional(),
-    hidden: z.boolean().optional(),
-    guiHidden: z.boolean().optional(),
-    mode: z.string().optional(),
-    children: z.record(VfsNodeSchema).optional(),
-  }),
-);
-
 export type VfsNode = {
   type: 'file' | 'dir';
   content?: string;
@@ -249,6 +237,18 @@ export type VfsNode = {
   mode?: string;
   children?: Record<string, VfsNode>;
 };
+
+export const VfsNodeSchema: z.ZodType<VfsNode> = z.lazy(() =>
+  z.object({
+    type: z.enum(['file', 'dir']),
+    content: z.string().optional(),
+    binaryBase64: z.string().optional(),
+    hidden: z.boolean().optional(),
+    guiHidden: z.boolean().optional(),
+    mode: z.string().optional(),
+    children: z.record(VfsNodeSchema).optional(),
+  }),
+) as z.ZodType<VfsNode>;
 
 export const ChapterPackageSchema = z.object({
   id: ChapterIdSchema,
