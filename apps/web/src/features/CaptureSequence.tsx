@@ -66,7 +66,7 @@ const WIPE_LINES = [
 
 type Phase = 'loading' | 'call' | 'wipe' | 'done';
 
-/** Câmera do captor: ruído + silhueta glitch. */
+/** Câmera do captor: avatar SIGNAL_CTRL + ruído pesado + sway. */
 function EnemyCam() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -77,6 +77,13 @@ function EnemyCam() {
     if (!ctx) return;
     let raf = 0;
     let alive = true;
+
+    const avatar = new Image();
+    avatar.src = '/img/signal-ctrl.png';
+    let avatarReady = false;
+    avatar.onload = () => {
+      avatarReady = true;
+    };
 
     const fit = () => {
       const parent = canvas.parentElement;
@@ -96,49 +103,86 @@ function EnemyCam() {
       if (!alive) return;
       const w = canvas.clientWidth || 1;
       const h = canvas.clientHeight || 1;
-      ctx.fillStyle = '#050608';
+
+      ctx.fillStyle = '#020203';
       ctx.fillRect(0, 0, w, h);
 
-      // grain em baixa resolução
-      const iw = 160;
-      const ih = Math.max(1, Math.round((160 * h) / w));
+      // balanço lento + micro-jitter
+      const sway = Math.sin(t / 1400) * (w * 0.028) + Math.sin(t / 2100) * (w * 0.012);
+      const bob = Math.sin(t / 1800) * (h * 0.008);
+      const jitterX = (Math.random() - 0.5) * 2.2;
+      const jitterY = (Math.random() - 0.5) * 1.6;
+
+      if (avatarReady) {
+        const scale = Math.max(w / avatar.naturalWidth, h / avatar.naturalHeight) * 1.12;
+        const dw = avatar.naturalWidth * scale;
+        const dh = avatar.naturalHeight * scale;
+        const dx = (w - dw) / 2 + sway + jitterX;
+        const dy = (h - dh) / 2 + bob + jitterY - h * 0.04;
+        ctx.save();
+        ctx.filter = 'contrast(1.15) brightness(0.72) saturate(0.55)';
+        ctx.drawImage(avatar, dx, dy, dw, dh);
+        ctx.restore();
+      }
+
+      // véu escuro
+      ctx.fillStyle = 'rgba(0,0,0,0.28)';
+      ctx.fillRect(0, 0, w, h);
+
+      // MUITO ruído
+      const iw = 220;
+      const ih = Math.max(1, Math.round((220 * h) / w));
       const img = ctx.createImageData(iw, ih);
       const data = img.data;
       for (let i = 0; i < data.length; i += 4) {
-        const v = (Math.random() * 48) | 0;
+        const v = (Math.random() * 255) | 0;
+        const a = 90 + ((Math.random() * 110) | 0);
         data[i] = v;
-        data[i + 1] = v + 6;
-        data[i + 2] = v + 10;
-        data[i + 3] = 255;
+        data[i + 1] = v;
+        data[i + 2] = v + ((Math.random() * 20) | 0);
+        data[i + 3] = a;
       }
       const tmp = document.createElement('canvas');
       tmp.width = iw;
       tmp.height = ih;
       tmp.getContext('2d')!.putImageData(img, 0, 0);
+      ctx.save();
+      ctx.globalCompositeOperation = 'overlay';
+      ctx.globalAlpha = 0.85;
       ctx.imageSmoothingEnabled = false;
       ctx.drawImage(tmp, 0, 0, w, h);
+      ctx.restore();
 
-      const cx = w * 0.5;
-      const cy = h * 0.52;
-      const flicker = 0.55 + Math.sin(t / 180) * 0.12 + Math.random() * 0.08;
-      ctx.fillStyle = `rgba(18, 28, 36, ${flicker})`;
-      ctx.beginPath();
-      ctx.ellipse(cx, cy - h * 0.18, w * 0.09, h * 0.11, 0, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.beginPath();
-      ctx.moveTo(cx - w * 0.16, cy + h * 0.38);
-      ctx.quadraticCurveTo(cx, cy - h * 0.02, cx + w * 0.16, cy + h * 0.38);
-      ctx.closePath();
-      ctx.fill();
-
-      ctx.fillStyle = 'rgba(0,0,0,0.28)';
-      for (let y = 0; y < h; y += 3) ctx.fillRect(0, y, w, 1);
-
-      if (Math.random() < 0.08) {
-        const gy = Math.random() * h;
-        ctx.fillStyle = 'rgba(110, 200, 196, 0.12)';
-        ctx.fillRect(0, gy, w, 6 + Math.random() * 18);
+      // segunda camada de static mais grossa
+      ctx.save();
+      ctx.globalAlpha = 0.22;
+      for (let i = 0; i < 48; i++) {
+        const y = Math.random() * h;
+        const hh = 1 + Math.random() * 3;
+        ctx.fillStyle = Math.random() > 0.5 ? '#fff' : '#000';
+        ctx.fillRect(0, y, w, hh);
       }
+      ctx.restore();
+
+      // scanlines
+      ctx.fillStyle = 'rgba(0,0,0,0.35)';
+      for (let y = 0; y < h; y += 2) ctx.fillRect(0, y, w, 1);
+
+      // glitch horizontal ocasional
+      if (Math.random() < 0.12) {
+        const gy = Math.random() * h;
+        const gh = 4 + Math.random() * 28;
+        ctx.drawImage(canvas, 0, gy, w, gh, (Math.random() - 0.5) * 28, gy, w, gh);
+        ctx.fillStyle = 'rgba(110, 200, 196, 0.08)';
+        ctx.fillRect(0, gy, w, gh);
+      }
+
+      // vignette
+      const grd = ctx.createRadialGradient(w / 2, h / 2, h * 0.15, w / 2, h / 2, h * 0.75);
+      grd.addColorStop(0, 'rgba(0,0,0,0)');
+      grd.addColorStop(1, 'rgba(0,0,0,0.55)');
+      ctx.fillStyle = grd;
+      ctx.fillRect(0, 0, w, h);
 
       raf = requestAnimationFrame(draw);
     };
