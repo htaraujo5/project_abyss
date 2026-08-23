@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, type MouseEvent } from 'react';
 import { useGame } from '../state/game';
 import { useMeta } from '../state/meta';
 import {
@@ -105,7 +105,7 @@ export function ProfileMenu() {
   const recent = achievements.filter((a) => a.unlocked).slice(-4).reverse();
   const lockedPreview = achievements.filter((a) => !a.unlocked).slice(0, 3);
 
-  function onCycleAvatar(e: React.MouseEvent) {
+  function onCycleAvatar(e: MouseEvent) {
     e.stopPropagation();
     if (!playerId) return;
     setSeed(cycleAvatarSeed(playerId));

@@ -19,11 +19,12 @@ import {
   IconEvidence,
   SEVERITY_ICONS,
 } from './Icons';
+import { ProfileMenu } from './ProfileMenu';
 
 /* ------------------------------- top bar --------------------------------- */
 
 export function TopBar() {
-  const { save, session, setPaletteOpen, notifications, notifOpen, setNotifOpen } = useGame();
+  const { save, setPaletteOpen, notifications, notifOpen, setNotifOpen } = useGame();
   const chapterMeta = useMeta((s) => s.chapterMeta);
   const [now, setNow] = useState(() => new Date());
   const [trapMs, setTrapMs] = useState<number | null>(() =>
@@ -72,9 +73,7 @@ export function TopBar() {
         </button>
       </div>
 
-      <span className="topbar-item" title="Sessão">
-        {session?.displayName ?? '—'}
-      </span>
+      <ProfileMenu />
       <div className="topbar-sep" />
       <button
         className="topbar-item"
