@@ -32,6 +32,7 @@ import { VaultApp } from './features/VaultApp';
 import { SettingsApp } from './features/SettingsApp';
 import { ChapterBanner, ChapterQuestion, EndingOverlay } from './features/Narrative';
 import { CaptureSequence } from './features/CaptureSequence';
+import { TrapSmileFlash } from './features/TrapSmileFlash';
 import { setMuted, setUiVolume, startAmbient, stopIntakeAmbience, uiSound } from './lib/audio';
 import { installCamadaC } from './lib/camada-c';
 import { checkTraps, clearExpiredBrowserTrap, getBrowserTrapRemainingMs, syncChapterClock } from './lib/traps';
@@ -297,6 +298,7 @@ function Desktop() {
       <ContextMenu />
       <CommandPalette bounds={bounds} />
       <ChapterBanner />
+      <TrapSmileFlash />
       {captureSequence && <CaptureSequence />}
       {phase === 'ending' && !captureSequence && <EndingOverlay />}
     </div>

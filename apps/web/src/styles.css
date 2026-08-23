@@ -3156,3 +3156,70 @@ select.input {
   margin-top: 2px;
 }
 
+/* —— flash sorriso (isca do browser) —— */
+.trap-smile-flash {
+  position: fixed;
+  inset: 0;
+  z-index: 1300;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.72);
+  pointer-events: none;
+  animation: trap-smile-in 180ms var(--ease, ease-out) forwards;
+}
+
+.trap-smile-flash.leave {
+  animation: trap-smile-out 320ms var(--ease, ease-in) forwards;
+}
+
+.trap-smile-face {
+  width: min(220px, 42vw);
+  height: auto;
+  color: #e8e8ea;
+  filter: drop-shadow(0 0 18px rgba(224, 85, 85, 0.35));
+  transform-origin: 50% 55%;
+  animation: trap-smile-pulse 2s ease-in-out;
+}
+
+@keyframes trap-smile-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes trap-smile-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.86);
+  }
+}
+
+@keyframes trap-smile-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.04);
+  }
+  70% {
+    transform: scale(0.98);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trap-smile-flash,
+  .trap-smile-flash.leave,
+  .trap-smile-face {
+    animation: none;
+  }
+}
+
+

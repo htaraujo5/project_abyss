@@ -3,6 +3,8 @@
 export const BROWSER_TRAP_MS = 30 * 1000;
 export const CHAPTER_TRAP_MS = 4 * 60 * 60 * 1000;
 export const TRAP_EVENT = 'abyss-trap-update';
+/** Flash do sorriso sinistro — disparado na primeira isca do browser. */
+export const TRAP_SMILE_EVENT = 'abyss-trap-smile';
 
 export type TrapReason = 'browser' | 'chapter';
 
@@ -65,15 +67,18 @@ export function normalizeHost(raw: string): string {
     .replace(/:\d+$/, '');
 }
 
-/** Arma o timer uma vez; visitas seguintes não reiniciam. */
-export function armBrowserTrap(saveId: string) {
+/** Arma o timer uma vez; visitas seguintes não reiniciam.
+ *  @returns true se acabou de armar (primeira isca). */
+export function armBrowserTrap(saveId: string): boolean {
   const s = load(saveId);
   if (s.browserArmedAt) {
     window.dispatchEvent(new CustomEvent(TRAP_EVENT, { detail: { saveId } }));
-    return;
+    return false;
   }
   s.browserArmedAt = Date.now();
   persist(saveId, s);
+  window.dispatchEvent(new CustomEvent(TRAP_SMILE_EVENT, { detail: { saveId } }));
+  return true;
 }
 
 /** ms restantes do timer do browser; null se não armado ou já consumido/limpo. */
