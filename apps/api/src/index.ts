@@ -37,7 +37,7 @@ import {
 import { initAuth, registerUser, loginUser } from './auth.js';
 import { camadaCHeaders } from './runtime/camada-c.js';
 
-const PORT = Number(process.env.PORT ?? 8787);
+const PORT = Number(process.env.PORT ?? 3344);
 
 async function main() {
   await initStore();

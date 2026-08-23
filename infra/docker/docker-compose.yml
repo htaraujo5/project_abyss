@@ -1,6 +1,9 @@
-# Porta pública do jogo: 8080
-# No host com Let's Encrypt, faça proxy de
-#   https://project_abyss.softnexware.com  →  http://127.0.0.1:8080
+# Portas no host (evita conflito com stacks comuns):
+#   web      8035  ← reverse proxy do domínio aponta aqui
+#   api      3344
+#   postgres 48291
+#   redis    49173
+# Domínio: https://project_abyss.softnexware.com → http://127.0.0.1:8035
 # (ver host-proxy.example.conf)
 
 services:
@@ -10,31 +13,27 @@ services:
       POSTGRES_USER: abyss
       POSTGRES_PASSWORD: abyss
       POSTGRES_DB: abyss
-    # só na rede interna do compose (não expor na internet)
-    expose:
-      - '5432'
+    ports:
+      - '48291:5432'
     volumes:
       - abyss_pg:/var/lib/postgresql/data
 
   redis:
     image: redis:7-alpine
-    expose:
-      - '6379'
+    ports:
+      - '49173:6379'
 
   api:
     build:
       context: ../..
       dockerfile: infra/docker/Dockerfile.api
     environment:
-      PORT: 8787
+      PORT: 3344
       ABYSS_SANDBOX: vfs
       DATABASE_URL: postgres://abyss:abyss@postgres:5432/abyss
       REDIS_URL: redis://redis:6379
-    # API só via nginx (web). Para debug local: descomente a linha ports.
-    expose:
-      - '8787'
-    # ports:
-    #   - '8787:8787'
+    ports:
+      - '3344:3344'
     depends_on:
       - postgres
       - redis
@@ -44,7 +43,7 @@ services:
       context: ../..
       dockerfile: infra/docker/Dockerfile.web
     ports:
-      - '8080:80'
+      - '8035:80'
     depends_on:
       - api
 

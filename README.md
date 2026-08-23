@@ -29,8 +29,8 @@ npm run build -w @abyss/content
 npm run dev
 ```
 
-- Web: http://localhost:5173  
-- API: http://localhost:8787/api/health  
+- Web: http://localhost:8035  
+- API: http://localhost:3344/api/health  
 
 ## Jogar (fluxo)
 
@@ -58,17 +58,18 @@ npm run soundtrack:download
 
 Produção: **https://project_abyss.softnexware.com**
 
-| Serviço | Porta |
+| Serviço | Porta no host |
 | --- | --- |
-| Web (nginx + proxy `/api` e `/ws`) | **8080** ← use esta no reverse proxy |
-| API (interna) | 8787 |
-| Postgres / Redis | só rede Docker |
+| Web (nginx + proxy `/api` e `/ws`) | **8035** ← reverse proxy do domínio |
+| API | **3344** |
+| Postgres | **48291** |
+| Redis | **49173** |
 
 ```bash
 docker compose -f infra/docker/docker-compose.yml up -d --build
 ```
 
-No nginx do host (SSL Let's Encrypt), aponte o vhost para `http://127.0.0.1:8080` com suporte a WebSocket (`Upgrade` / `Connection`). Modelo em [`infra/docker/host-proxy.example.conf`](infra/docker/host-proxy.example.conf).
+No nginx do host (SSL Let's Encrypt), aponte o vhost para `http://127.0.0.1:8035` com suporte a WebSocket (`Upgrade` / `Connection`). Modelo em [`infra/docker/host-proxy.example.conf`](infra/docker/host-proxy.example.conf).
 
 ## Testes
 

@@ -14,13 +14,13 @@ export default defineConfig({
     },
   },
   server: {
-    port: 5173,
+    port: 8035,
     watch: {
       ignored: ['**/public/audio/**', '**/node_modules/**'],
     },
     proxy: {
-      '/api': 'http://localhost:8787',
-      '/ws': { target: 'ws://localhost:8787', ws: true },
+      '/api': 'http://localhost:3344',
+      '/ws': { target: 'ws://localhost:3344', ws: true },
     },
   },
 });
