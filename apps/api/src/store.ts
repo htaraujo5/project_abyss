@@ -1,6 +1,5 @@
 import { mkdir, readFile, writeFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { nanoid } from 'nanoid';
 import {
   CONTENT_VERSION,
@@ -12,9 +11,9 @@ import { getChapter } from '@abyss/content';
 import { cloneVfs, writeFile as vfsWrite, readFile as vfsRead } from './runtime/vfs.js';
 import { VfsShell } from './runtime/shell.js';
 import { applyEventsToSave, mergeChapterIntoVfs, evaluateAll } from './runtime/engine.js';
+import { dataDir } from './data-dir.js';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const DATA_DIR = path.resolve(__dirname, '../../data');
+const DATA_DIR = dataDir();
 const SAVES_DIR = path.join(DATA_DIR, 'saves');
 const SESSIONS_FILE = path.join(DATA_DIR, 'sessions.json');
 

@@ -35,7 +35,7 @@ export function setUiVolume(v: number) {
 export function setMuted(v: boolean) {
   muted = v;
   if (v) stopAllAudio(0.25);
-  else if (ambientMode === 'intake') startIntakeAmbience();
+  // ao desmutar no desktop, só leito leve — nunca religa o score do intake
   else startAmbient();
 }
 
@@ -141,7 +141,7 @@ function clearAmbientSources(fade: number) {
   }, fade * 1000 + 40);
 }
 
-function stopIntakeBed(fade = 0.8) {
+function stopIntakeBed(fade = 0.35) {
   if (intakeFadeTimer != null) {
     window.clearInterval(intakeFadeTimer);
     intakeFadeTimer = null;
@@ -149,8 +149,24 @@ function stopIntakeBed(fade = 0.8) {
   const el = intakeBed;
   if (!el) return;
   intakeBed = null;
+
+  const kill = () => {
+    try {
+      el.pause();
+      el.removeAttribute('src');
+      el.load();
+    } catch {
+      /* */
+    }
+  };
+
+  if (fade <= 0 || el.volume <= 0.001) {
+    kill();
+    return;
+  }
+
   const start = el.volume;
-  const steps = Math.max(1, Math.floor(fade * 20));
+  const steps = Math.max(1, Math.floor(fade * 16));
   let i = 0;
   intakeFadeTimer = window.setInterval(() => {
     i += 1;
@@ -158,10 +174,15 @@ function stopIntakeBed(fade = 0.8) {
     if (i >= steps) {
       if (intakeFadeTimer != null) window.clearInterval(intakeFadeTimer);
       intakeFadeTimer = null;
-      el.pause();
-      el.src = '';
+      kill();
     }
-  }, fade * 50);
+  }, Math.max(16, (fade * 1000) / steps));
+}
+
+/** Para o score do login imediatamente (OGG + drones). */
+export function stopIntakeAmbience(fade = 0.45) {
+  stopIntakeBed(fade);
+  if (ambientMode === 'intake') clearAmbientSources(fade);
 }
 
 /** Bed OGG sinistro (score, não “música de rádio”) sob o drone. */
@@ -289,16 +310,12 @@ export function startIntakeAmbience() {
   }
 }
 
-export function stopIntakeAmbience(fade = 1) {
-  stopIntakeBed(fade);
-  if (ambientMode === 'intake') clearAmbientSources(fade);
-}
-
-/** Leito ambiente leve do desktop: ruído marrom filtrado + tom grave. */
+/** Leito ambiente leve do desktop: ruído marrom filtrado + tom grave (sem OGG). */
 export function startAmbient() {
   if (muted || uiVolume <= 0) return;
   try {
-    stopIntakeAmbience(0.6);
+    // mata score do login (OGG + drones) antes do leito do desktop
+    stopIntakeAmbience(0.35);
     stopCaptureNoise(0.2);
     const ac = ensureCtx();
     if (ambientGain && ambientMode === 'desk') return;

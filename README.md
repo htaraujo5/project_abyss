@@ -77,6 +77,8 @@ O `:3000` do servidor é só o painel. Bad Gateway quase sempre = porta do Domai
 
 Compose: `infra/docker/docker-compose.yml` (rede `dokploy-network`).
 
+**Persistência:** cadastros e saves ficam em JSON no volume Docker `abyss_data` (`ABYSS_DATA_DIR=/app/apps/data`). O Postgres do compose ainda **não** guarda auth/progresso — sem o volume, todo redeploy apaga os dados.
+
 ## Testes
 
 ```bash

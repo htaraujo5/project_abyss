@@ -1,12 +1,11 @@
 import { createHash, randomBytes, scryptSync, timingSafeEqual } from 'node:crypto';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { nanoid } from 'nanoid';
 import type { GuestSession, RegisterRequest } from '@abyss/shared';
+import { dataDir } from './data-dir.js';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const DATA_DIR = path.resolve(__dirname, '../../data');
+const DATA_DIR = dataDir();
 const USERS_FILE = path.join(DATA_DIR, 'users.json');
 
 export type UserAccount = {
@@ -75,7 +74,9 @@ export async function registerUser(input: RegisterRequest): Promise<GuestSession
 export async function loginUser(username: string, password: string): Promise<GuestSession> {
   await ensure();
   const u = username.trim().toLowerCase();
-  const account = users.find((x) => x.username === u);
+  const account = users.find(
+    (x) => x.username === u || (x.email && x.email.toLowerCase() === u),
+  );
   if (!account) throw new Error('credenciais inválidas');
   const hash = hashPassword(password, account.salt);
   const a = Buffer.from(hash, 'hex');

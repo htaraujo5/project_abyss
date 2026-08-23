@@ -543,7 +543,8 @@ async function main() {
   });
 
   await app.listen({ port: PORT, host: '0.0.0.0' });
-  console.log(`ABYSS API on http://localhost:${PORT} (sandbox=${sandboxMode()})`);
+  const { dataDir } = await import('./data-dir.js');
+  console.log(`ABYSS API on http://localhost:${PORT} (sandbox=${sandboxMode()} data=${dataDir()})`);
 }
 
 function bearer(h?: string) {

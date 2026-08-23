@@ -32,7 +32,7 @@ import { VaultApp } from './features/VaultApp';
 import { SettingsApp } from './features/SettingsApp';
 import { ChapterBanner, ChapterQuestion, EndingOverlay } from './features/Narrative';
 import { CaptureSequence } from './features/CaptureSequence';
-import { setMuted, setUiVolume, startAmbient, uiSound } from './lib/audio';
+import { setMuted, setUiVolume, startAmbient, stopIntakeAmbience, uiSound } from './lib/audio';
 import { installCamadaC } from './lib/camada-c';
 import { checkTraps, clearExpiredBrowserTrap, getBrowserTrapRemainingMs, syncChapterClock } from './lib/traps';
 import { triggerTrapCapture } from './lib/capture';
@@ -242,9 +242,10 @@ function Desktop() {
     return () => window.removeEventListener('keydown', onKey);
   }, [bounds]);
 
-  // sons de interface + leito ambiente conforme preferências
+  // sons de interface + leito ambiente do desktop (sem score do login)
   useEffect(() => {
     setUiVolume(settings.volumeUi);
+    stopIntakeAmbience(0.3);
     setMuted(settings.muted);
     if (!settings.muted && phase === 'playing') startAmbient();
   }, [settings.volumeUi, settings.muted, phase]);

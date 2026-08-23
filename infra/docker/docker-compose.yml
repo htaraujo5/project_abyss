@@ -6,8 +6,9 @@
 #   Container Port   = 8035
 #   HTTPS            = ON + Let's Encrypt
 #
-# O web faz proxy de /api e /ws → host.docker.internal:3344 (API).
-# Por isso a API PRECISA publicar 3344 no host.
+# Persistência: usuários/saves/sessões ficam em JSON no volume abyss_data
+# (NÃO no Postgres ainda — DATABASE_URL é reservado para migração futura).
+# Sem esse volume, todo redeploy apaga cadastros e progressos.
 
 services:
   postgres:
@@ -37,10 +38,13 @@ services:
     environment:
       PORT: 3344
       ABYSS_SANDBOX: vfs
+      ABYSS_DATA_DIR: /app/apps/data
       DATABASE_URL: postgres://abyss:abyss@postgres:5432/abyss
       REDIS_URL: redis://redis:6379
     ports:
       - '3344:3344'
+    volumes:
+      - abyss_data:/app/apps/data
     healthcheck:
       test:
         [
@@ -82,3 +86,4 @@ networks:
 
 volumes:
   abyss_pg:
+  abyss_data:
