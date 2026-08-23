@@ -54,6 +54,22 @@ npm run soundtrack:download
 # copiar documentacao/PROJECT_ABYSS_SOUNDTRACK_PACK/audio/*.ogg → apps/web/public/audio/
 ```
 
+## Deploy (domínio)
+
+Produção: **https://project_abyss.softnexware.com**
+
+| Serviço | Porta |
+| --- | --- |
+| Web (nginx + proxy `/api` e `/ws`) | **8080** ← use esta no reverse proxy |
+| API (interna) | 8787 |
+| Postgres / Redis | só rede Docker |
+
+```bash
+docker compose -f infra/docker/docker-compose.yml up -d --build
+```
+
+No nginx do host (SSL Let's Encrypt), aponte o vhost para `http://127.0.0.1:8080` com suporte a WebSocket (`Upgrade` / `Connection`). Modelo em [`infra/docker/host-proxy.example.conf`](infra/docker/host-proxy.example.conf).
+
 ## Testes
 
 ```bash
@@ -63,3 +79,4 @@ npm run test -w @abyss/api
 ## Documentação de design
 
 [`documentacao/`](documentacao/) — fonte de verdade (GDD, puzzles, visual, arquitetura).
+
