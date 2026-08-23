@@ -49,7 +49,7 @@ export function TopBar() {
   const unread = notifications.filter((n) => !n.read).length;
   const meta = save ? chapterMeta[save.currentChapter] : undefined;
   const solved = save ? Object.values(save.puzzles).filter((p) => p.status === 'completed').length : 0;
-  const showCountdown = trapMs != null;
+  const showCountdown = trapMs != null && trapMs > 0;
 
   return (
     <header className="topbar">

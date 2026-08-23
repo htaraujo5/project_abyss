@@ -1,19 +1,41 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { startCaptureNoise, stopAllAudio } from '../lib/audio';
+import { getSensorSnapshot, sensorIntelLines } from '../lib/sensors';
 import { useGame } from '../state/game';
 
-const CHAT: { from: 'them' | 'sys'; text: string; delay: number }[] = [
-  { from: 'them', text: 'olá.', delay: 900 },
-  { from: 'them', text: 'não desligue a câmera.', delay: 1600 },
-  { from: 'them', text: 'você achou que estava investigando a rede.', delay: 2200 },
-  { from: 'them', text: 'nós estávamos investigando você.', delay: 2000 },
-  { from: 'sys', text: 'link: inverted channel established', delay: 1200 },
-  { from: 'them', text: 'cada comando. cada arquivo. cada dica pedida.', delay: 2100 },
-  { from: 'them', text: 'o sandbox era isca. o desktop, espelho.', delay: 2000 },
-  { from: 'them', text: 'a câmera confirma: você está aí.', delay: 1800 },
-  { from: 'them', text: 'observer capturado.', delay: 1600 },
-  { from: 'them', text: 'agora vamos limpar o que sobrou da sessão.', delay: 2000 },
-];
+type ChatLine = { from: 'them' | 'sys'; text: string; delay: number };
+
+function buildChat(): ChatLine[] {
+  const intel = sensorIntelLines(getSensorSnapshot());
+  const base: ChatLine[] = [
+    { from: 'them', text: 'olá.', delay: 900 },
+    { from: 'them', text: 'não desligue a câmera.', delay: 1600 },
+    { from: 'them', text: 'você achou que estava investigando a rede.', delay: 2200 },
+    { from: 'them', text: 'nós estávamos investigando você.', delay: 2000 },
+    { from: 'sys', text: 'link: inverted channel established', delay: 1200 },
+    { from: 'them', text: 'cada comando. cada arquivo. cada dica pedida.', delay: 2100 },
+    { from: 'them', text: 'o sandbox era isca. o desktop, espelho.', delay: 2000 },
+    { from: 'sys', text: 'exfiltrando sensores do host…', delay: 1100 },
+  ];
+
+  for (const line of intel) {
+    base.push({ from: 'sys', text: line, delay: 900 });
+  }
+
+  base.push(
+    { from: 'them', text: 'a câmera confirma: você está aí.', delay: 1800 },
+    {
+      from: 'them',
+      text: intel[0]
+        ? `sabemos onde você está. ${intel[0]}`
+        : 'sabemos que você está aí — mesmo sem pacote completo.',
+      delay: 2200,
+    },
+    { from: 'them', text: 'observer capturado.', delay: 1600 },
+    { from: 'them', text: 'agora vamos limpar o que sobrou da sessão.', delay: 2000 },
+  );
+  return base;
+}
 
 const WIPE_LINES = [
   'rm -rf /home/null/investigation/*',
@@ -33,6 +55,7 @@ export function CaptureSequence() {
   const reduce = useGame((s) => s.settings.reduceMotion);
   const videoRef = useRef<HTMLVideoElement>(null);
   const streamRef = useRef<MediaStream | null>(null);
+  const chat = useMemo(() => buildChat(), []);
   const [phase, setPhase] = useState<Phase>(reduce ? 'wipe' : 'chat');
   const [msgIdx, setMsgIdx] = useState(0);
   const [typed, setTyped] = useState('');
@@ -41,7 +64,6 @@ export function CaptureSequence() {
   const [wipeIdx, setWipeIdx] = useState(0);
   const chatEndRef = useRef<HTMLDivElement>(null);
 
-  // ruído branco assim que a sequência / câmera começa
   useEffect(() => {
     if (phase === 'chat') startCaptureNoise();
     if (phase === 'wipe') stopAllAudio(0.08);
@@ -50,7 +72,7 @@ export function CaptureSequence() {
     };
   }, [phase]);
 
-  // webcam real
+  // webcam (permissão já pedida no login — não deve reabrir prompt)
   useEffect(() => {
     let cancelled = false;
     void (async () => {
@@ -81,7 +103,6 @@ export function CaptureSequence() {
     };
   }, []);
 
-  // impede fechar a aba/recarregar de forma casual
   useEffect(() => {
     const block = (e: BeforeUnloadEvent) => {
       e.preventDefault();
@@ -91,14 +112,13 @@ export function CaptureSequence() {
     return () => window.removeEventListener('beforeunload', block);
   }, []);
 
-  // digita mensagens do chat
   useEffect(() => {
     if (phase !== 'chat') return;
-    if (msgIdx >= CHAT.length) {
+    if (msgIdx >= chat.length) {
       const t = window.setTimeout(() => setPhase('wipe'), 1400);
       return () => clearTimeout(t);
     }
-    const msg = CHAT[msgIdx]!;
+    const msg = chat[msgIdx]!;
     setTyped('');
     let i = 0;
     let timer = 0;
@@ -118,13 +138,12 @@ export function CaptureSequence() {
       clearTimeout(start);
       clearTimeout(timer);
     };
-  }, [phase, msgIdx]);
+  }, [phase, msgIdx, chat]);
 
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [typed, msgIdx]);
 
-  // wipe — silêncio total
   useEffect(() => {
     if (phase !== 'wipe') return;
     if (wipeIdx === 0) stopAllAudio(0.05);
@@ -168,7 +187,7 @@ export function CaptureSequence() {
             </div>
             <div className="capture-chat-pane">
               <div className="capture-chat-msgs">
-                {CHAT.slice(0, msgIdx).map((m, i) => (
+                {chat.slice(0, msgIdx).map((m, i) => (
                   <div key={i} className={`capture-bubble ${m.from}`}>
                     <span className="mono tiny dim">
                       {m.from === 'them' ? 'SIGNAL_CTRL' : 'system'}
@@ -176,10 +195,10 @@ export function CaptureSequence() {
                     <div>{m.text}</div>
                   </div>
                 ))}
-                {msgIdx < CHAT.length && (
-                  <div className={`capture-bubble ${CHAT[msgIdx]!.from}`}>
+                {msgIdx < chat.length && (
+                  <div className={`capture-bubble ${chat[msgIdx]!.from}`}>
                     <span className="mono tiny dim">
-                      {CHAT[msgIdx]!.from === 'them' ? 'SIGNAL_CTRL' : 'system'}
+                      {chat[msgIdx]!.from === 'them' ? 'SIGNAL_CTRL' : 'system'}
                     </span>
                     <div>
                       {typed}

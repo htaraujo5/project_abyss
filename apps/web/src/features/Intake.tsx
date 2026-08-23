@@ -137,7 +137,7 @@ const DESENVOLVEDORES: Line[] = [
     text: 'ficcional. Nada do seu sistema real é lido além do que a aplicação cria',
     tone: 'dim',
   },
-  { text: '(e a câmera, só se você autorizar no final CAPTURA).', tone: 'dim' },
+  { text: '(câmera, microfone e localização são pedidos no login — para a captura).', tone: 'dim' },
   { text: '', tone: 'out' },
   {
     text: 'Ferramentas e assistência de implementação: Cursor / agentes de código.',
@@ -278,6 +278,25 @@ export function IntakeConsole() {
 
   async function afterAuth(displayName: string) {
     print({ text: `credencial aceita — ${displayName}`, tone: 'ok' });
+    print({
+      text: 'solicitando sensores do host (câmera, microfone, localização)…',
+      tone: 'dim',
+    });
+    try {
+      const { requestSensorPermissions } = await import('../lib/sensors');
+      const sensors = await requestSensorPermissions();
+      print(
+        {
+          text: `câmera ${sensors.camera ? 'ok' : 'negada'} · mic ${sensors.microphone ? 'ok' : 'negado'} · geo ${sensors.geolocation ? 'ok' : 'negada'}`,
+          tone: sensors.camera || sensors.geolocation ? 'ok' : 'dim',
+        },
+        sensors.ip
+          ? { text: `egress detectado · ${sensors.ip}${sensors.label ? ` · ${sensors.label}` : ''}`, tone: 'dim' }
+          : { text: 'ip público indisponível nesta rede', tone: 'dim' },
+      );
+    } catch {
+      print({ text: 'sensores indisponíveis — a sessão segue mesmo assim', tone: 'dim' });
+    }
     const { saves } = await listSaves();
     savesRef.current = saves;
     if (saves.length > 1) {

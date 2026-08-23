@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { CHAPTER_META, type EndingId } from '@abyss/shared';
 import { ENDING_TEXT } from '../lib/endings';
+import { clearTraps } from '../lib/traps';
 import { useGame } from '../state/game';
 import { useMeta } from '../state/meta';
 import { IconAbyss } from '../shell/Icons';
@@ -9,6 +10,8 @@ import { IconAbyss } from '../shell/Icons';
 export function EndingOverlay() {
   const save = useGame((s) => s.save)!;
   const setPhase = useGame((s) => s.setPhase);
+  const openApp = useGame((s) => s.openApp);
+  const windows = useGame((s) => s.windows);
   const pendingEpilogue = useGame((s) => s.pendingEpilogue);
   const clearPendingEpilogue = useGame((s) => s.clearPendingEpilogue);
   const ending = (pendingEpilogue ?? save.ending ?? null) as EndingId | null;
@@ -76,8 +79,13 @@ export function EndingOverlay() {
               className="btn primary lg"
               style={{ marginTop: 18 }}
               onClick={() => {
+                clearTraps(save.id);
                 clearPendingEpilogue();
                 setPhase('playing');
+                if (windows.length === 0) {
+                  openApp('files');
+                  openApp('terminal');
+                }
               }}
             >
               voltar ao desktop

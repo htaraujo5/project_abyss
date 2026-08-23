@@ -76,12 +76,23 @@ export function armBrowserTrap(saveId: string) {
   persist(saveId, s);
 }
 
-/** ms restantes do timer do browser; null se não armado. */
+/** ms restantes do timer do browser; null se não armado ou já consumido/limpo. */
 export function getBrowserTrapRemainingMs(saveId: string | null | undefined): number | null {
   if (!saveId) return null;
   const s = load(saveId);
   if (!s.browserArmedAt) return null;
-  return Math.max(0, BROWSER_TRAP_MS - (Date.now() - s.browserArmedAt));
+  const left = BROWSER_TRAP_MS - (Date.now() - s.browserArmedAt);
+  if (left <= 0) return 0;
+  return left;
+}
+
+/** Remove timer de browser expirado sem disparar captura (ex.: após wipe). */
+export function clearExpiredBrowserTrap(saveId: string) {
+  const s = load(saveId);
+  if (!s.browserArmedAt) return;
+  if (Date.now() - s.browserArmedAt < BROWSER_TRAP_MS) return;
+  delete s.browserArmedAt;
+  persist(saveId, s);
 }
 
 export function formatCountdown(ms: number): string {

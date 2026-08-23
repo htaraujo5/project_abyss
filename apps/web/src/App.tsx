@@ -34,7 +34,7 @@ import { ChapterBanner, ChapterQuestion, EndingOverlay } from './features/Narrat
 import { CaptureSequence } from './features/CaptureSequence';
 import { setMuted, setUiVolume, startAmbient, uiSound } from './lib/audio';
 import { installCamadaC } from './lib/camada-c';
-import { checkTraps, syncChapterClock } from './lib/traps';
+import { checkTraps, clearExpiredBrowserTrap, getBrowserTrapRemainingMs, syncChapterClock } from './lib/traps';
 import { triggerTrapCapture } from './lib/capture';
 
 const SHORTCUT_ORDER: AppId[] = [
@@ -115,6 +115,15 @@ function Desktop() {
   useEffect(() => {
     if (!save || uiLocked || captureSequence || phase === 'ending') return;
     syncChapterClock(save.id, save.currentChapter, save.chapterEnteredAt);
+    // timer expirado de uma captura anterior não pode ficar em 00:00 zumbi
+    const left = getBrowserTrapRemainingMs(save.id);
+    if (left === 0 && !save.ending) {
+      // tenta disparar; se falhar, limpa o estado local
+      void triggerTrapCapture('browser').finally(() => {
+        const still = getBrowserTrapRemainingMs(save.id);
+        if (still === 0) clearExpiredBrowserTrap(save.id);
+      });
+    }
     const tick = () => {
       const g = useGame.getState();
       const s = g.save;

@@ -212,6 +212,10 @@ export const useGame = create<GameState>((set, get) => ({
     }),
 
   endCaptureSequence: () => {
+    const saveId = get().save?.id;
+    if (saveId) {
+      void import('../lib/traps').then(({ clearTraps }) => clearTraps(saveId));
+    }
     // reset assíncrono do progresso; a UI do epílogo usa pendingEpilogue
     void import('../lib/capture').then(({ resetProgressAfterCapture }) =>
       resetProgressAfterCapture(),

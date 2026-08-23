@@ -1355,20 +1355,37 @@ export function registerManPages(specs: CommandSpec[]) {
 }
 
 function gameHelp(): ExecResult {
-  const cats: Record<string, string[]> = {};
+  const cats: Record<string, CommandSpec[]> = {};
   for (const c of MAN_INDEX.values()) {
     cats[c.category] ??= [];
-    if (!cats[c.category].includes(c.name)) cats[c.category].push(c.name);
+    if (!cats[c.category].some((x) => x.name === c.name)) cats[c.category].push(c);
   }
-  const rows = ['ABYSS shell — comandos disponíveis:', ''];
-  for (const [cat, names] of Object.entries(cats).sort()) {
-    rows.push(`  ${cat}: ${names.sort().join(', ')}`);
-  }
-  rows.push(
+
+  const width = Math.min(
+    16,
+    Math.max(8, ...[...MAN_INDEX.values()].map((c) => c.name.length)),
+  );
+
+  const rows = [
+    'ABYSS shell — manual resumido',
+    'Formato: comando — o que faz. Detalhes: man <comando>',
     '',
+  ];
+
+  for (const cat of Object.keys(cats).sort()) {
+    rows.push(`${cat}`);
+    const list = cats[cat].slice().sort((a, b) => a.name.localeCompare(b.name));
+    for (const c of list) {
+      const name = c.name.padEnd(width);
+      rows.push(`  ${name} — ${c.summary}`);
+    }
+    rows.push('');
+  }
+
+  rows.push(
     'Operadores: |  &&  ||  ;  >  >>  <  2>  $(...)  <(...)  *  ?  {}',
-    'Use man <comando> para detalhes. Game: submit, investigate, ajuda/guia, choose, epilogue.',
-    'Travou? digite: ajuda   → abre o guia completo em nova aba (spoilers).',
+    'Jogo: submit, investigate, ajuda/guia, choose, epilogue',
+    'Travou? digite: ajuda  → abre o guia completo em nova aba (spoilers).',
   );
   return lines(rows);
 }
