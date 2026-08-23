@@ -1,10 +1,13 @@
-# Portas no host (= porta dentro do container, pra proxy Docker/softnexware não errar):
-#   web      8035  ← domínio aponta aqui
-#   api      3344
-#   postgres 48291
-#   redis    49173
-# Domínio: https://project_abyss.softnexware.com → http://127.0.0.1:8035
-# Se o proxy rodar em outro container: http://web:8035 (não use :80)
+# Dokploy (http://2.24.87.103:3000) + domínio project_abyss.softnexware.com
+#
+# Domains → Create Domain:
+#   Host             = project_abyss.softnexware.com
+#   Service          = web
+#   Container Port   = 8035
+#   HTTPS            = ON + Let's Encrypt
+#
+# O web faz proxy de /api e /ws → host.docker.internal:3344 (API).
+# Por isso a API PRECISA publicar 3344 no host.
 
 services:
   postgres:
@@ -17,11 +20,15 @@ services:
       - '48291:5432'
     volumes:
       - abyss_pg:/var/lib/postgresql/data
+    networks:
+      - abyss
 
   redis:
     image: redis:7-alpine
     ports:
       - '49173:6379'
+    networks:
+      - abyss
 
   api:
     build:
@@ -49,6 +56,8 @@ services:
     depends_on:
       - postgres
       - redis
+    networks:
+      - abyss
 
   web:
     build:
@@ -56,9 +65,20 @@ services:
       dockerfile: infra/docker/Dockerfile.web
     ports:
       - '8035:8035'
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
     depends_on:
       api:
         condition: service_healthy
+    networks:
+      - abyss
+      - dokploy-network
+
+networks:
+  abyss:
+    driver: bridge
+  dokploy-network:
+    external: true
 
 volumes:
   abyss_pg:

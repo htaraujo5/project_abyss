@@ -54,22 +54,28 @@ npm run soundtrack:download
 # copiar documentacao/PROJECT_ABYSS_SOUNDTRACK_PACK/audio/*.ogg → apps/web/public/audio/
 ```
 
-## Deploy (domínio)
+## Deploy (Dokploy)
 
-Produção: **https://project_abyss.softnexware.com**
+Painel: [http://2.24.87.103:3000/](http://2.24.87.103:3000/)  
+Domínio: **https://project_abyss.softnexware.com**
 
-| Serviço | Porta (host = container) |
-| --- | --- |
-| Web (nginx + proxy `/api` e `/ws`) | **8035** ← reverse proxy do domínio |
-| API | **3344** |
-| Postgres | **48291** (host) → 5432 no container |
-| Redis | **49173** (host) → 6379 no container |
+| Serviço | Container port (Dokploy Domains) | Host (debug) |
+| --- | --- | --- |
+| **web** ← escolha este no Domains | **8035** | 8035 |
+| api | 3344 (não exponha no domínio) | 3344 |
+| postgres | — | 48291 |
+| redis | — | 49173 |
 
-```bash
-docker compose -f infra/docker/docker-compose.yml up -d --build
-```
+No Dokploy → Domains do compose:
 
-No nginx/softnexware (SSL Let's Encrypt), aponte o vhost para `http://127.0.0.1:8035` **ou**, se o proxy estiver na rede Docker, `http://web:8035` (porta **8035**, não 80). WebSocket: headers `Upgrade` / `Connection`. Modelo em [`infra/docker/host-proxy.example.conf`](infra/docker/host-proxy.example.conf).
+1. Host: `project_abyss.softnexware.com`
+2. Service: `web`
+3. Container Port: **8035**
+4. HTTPS + Let's Encrypt
+
+O `:3000` do servidor é só o painel. Bad Gateway quase sempre = porta do Domains ≠ 8035 (ex.: 80 ou 3000).
+
+Compose: `infra/docker/docker-compose.yml` (rede `dokploy-network`).
 
 ## Testes
 

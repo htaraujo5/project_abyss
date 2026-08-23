@@ -1,0 +1,22 @@
+# Dokploy — project_abyss.softnexware.com
+#
+# Painel: http://2.24.87.103:3000/
+#
+# 1) Domains (obrigatório):
+#    Host             project_abyss.softnexware.com
+#    Path             /
+#    Service          web
+#    Container Port   8035
+#    HTTPS            ON
+#    Certificate      Let's Encrypt
+#
+# 2) A API NÃO entra no Domains. O nginx do web encaminha:
+#      /api/*  →  host:3344
+#      /ws/*   →  host:3344
+#
+# 3) Confirme no servidor, depois do deploy:
+#      curl -sS http://127.0.0.1:3344/api/health
+#      curl -sS http://127.0.0.1:8035/api/health
+#
+# Se o (1) do host OK e o (2) 502 → rebuild do serviço web
+# (imagem antiga ainda apontava para api:3344 via DNS quebrado).
