@@ -1,9 +1,9 @@
-# Dokploy — abyss_project.softnexware.com
+# Dokploy — abyss-project.softnexware.com
 #
 # Painel: http://2.24.87.103:3000/
 #
 # 1) Domains (obrigatório):
-#    Host             abyss_project.softnexware.com
+#    Host             abyss-project.softnexware.com
 #    Path             /
 #    Service          web
 #    Container Port   8035
