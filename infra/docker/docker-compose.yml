@@ -1,10 +1,10 @@
-# Portas no host (evita conflito com stacks comuns):
-#   web      8035  ← reverse proxy do domínio aponta aqui
+# Portas no host (= porta dentro do container, pra proxy Docker/softnexware não errar):
+#   web      8035  ← domínio aponta aqui
 #   api      3344
 #   postgres 48291
 #   redis    49173
 # Domínio: https://project_abyss.softnexware.com → http://127.0.0.1:8035
-# (ver host-proxy.example.conf)
+# Se o proxy rodar em outro container: http://web:8035 (não use :80)
 
 services:
   postgres:
@@ -34,6 +34,18 @@ services:
       REDIS_URL: redis://redis:6379
     ports:
       - '3344:3344'
+    healthcheck:
+      test:
+        [
+          'CMD',
+          'node',
+          '-e',
+          "fetch('http://127.0.0.1:3344/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+      start_period: 20s
     depends_on:
       - postgres
       - redis
@@ -43,9 +55,10 @@ services:
       context: ../..
       dockerfile: infra/docker/Dockerfile.web
     ports:
-      - '8035:80'
+      - '8035:8035'
     depends_on:
-      - api
+      api:
+        condition: service_healthy
 
 volumes:
   abyss_pg:

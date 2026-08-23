@@ -58,18 +58,18 @@ npm run soundtrack:download
 
 Produção: **https://project_abyss.softnexware.com**
 
-| Serviço | Porta no host |
+| Serviço | Porta (host = container) |
 | --- | --- |
 | Web (nginx + proxy `/api` e `/ws`) | **8035** ← reverse proxy do domínio |
 | API | **3344** |
-| Postgres | **48291** |
-| Redis | **49173** |
+| Postgres | **48291** (host) → 5432 no container |
+| Redis | **49173** (host) → 6379 no container |
 
 ```bash
 docker compose -f infra/docker/docker-compose.yml up -d --build
 ```
 
-No nginx do host (SSL Let's Encrypt), aponte o vhost para `http://127.0.0.1:8035` com suporte a WebSocket (`Upgrade` / `Connection`). Modelo em [`infra/docker/host-proxy.example.conf`](infra/docker/host-proxy.example.conf).
+No nginx/softnexware (SSL Let's Encrypt), aponte o vhost para `http://127.0.0.1:8035` **ou**, se o proxy estiver na rede Docker, `http://web:8035` (porta **8035**, não 80). WebSocket: headers `Upgrade` / `Connection`. Modelo em [`infra/docker/host-proxy.example.conf`](infra/docker/host-proxy.example.conf).
 
 ## Testes
 
