@@ -2502,7 +2502,7 @@ select.input {
   }
 }
 
-/* —— captura: chat + webcam + wipe —— */
+/* —— captura: videochamada + wipe —— */
 .capture-lock {
   position: fixed;
   inset: 0;
@@ -2510,61 +2510,81 @@ select.input {
   background: #000;
   display: grid;
   place-items: center;
-  padding: 3vh 3vw;
+  padding: 2vh 2vw;
 }
 
-.capture-chat-win {
-  width: min(920px, 96vw);
-  height: min(620px, 88vh);
+.capture-call {
+  width: min(980px, 96vw);
+  height: min(720px, 92vh);
   display: flex;
   flex-direction: column;
-  border: 1px solid #333;
-  background: #0a0a0c;
-  box-shadow: 0 0 0 1px #111, 0 24px 80px rgba(0, 0, 0, 0.85);
+  border: 1px solid #2a2a30;
+  background: #07080a;
+  box-shadow: 0 0 0 1px #111, 0 28px 90px rgba(0, 0, 0, 0.9);
+  overflow: hidden;
 }
 
-.capture-chat-titlebar {
+.capture-call-bar {
   display: flex;
   align-items: center;
   gap: 10px;
   padding: 8px 12px;
   border-bottom: 1px solid #222;
-  background: #111;
+  background: #101114;
   color: #aaa;
 }
 
-.capture-chat-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #444;
-}
-
-.capture-chat-dot.live {
-  background: #e05555;
-  box-shadow: 0 0 8px #e05555;
-  animation: capture-blink 1s step-end infinite;
-}
-
-.capture-chat-lock {
-  margin-left: auto;
-  color: #e05555;
-  letter-spacing: 0.14em;
-}
-
-.capture-chat-body {
-  flex: 1;
-  display: grid;
-  grid-template-columns: minmax(200px, 38%) 1fr;
-  min-height: 0;
-}
-
-.capture-cam {
+.capture-call-stage {
   position: relative;
-  background: #050505;
-  border-right: 1px solid #222;
-  overflow: hidden;
+  flex: 1;
+  min-height: 0;
+  background: #000;
 }
+
+.capture-feed {
+  position: absolute;
+  overflow: hidden;
+  background: #050505;
+}
+
+.capture-feed.remote { inset: 0; }
+
+.capture-feed.self {
+  right: 14px;
+  bottom: 14px;
+  width: min(240px, 32%);
+  aspect-ratio: 4 / 3;
+  border: 1px solid #3a3a42;
+  border-radius: 4px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.65);
+  z-index: 2;
+}
+
+.capture-feed.self.err { border-color: #623232; }
+
+.capture-enemy-canvas { width: 100%; height: 100%; display: block; }
+
+.capture-feed-noise {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.18) 3px);
+  mix-blend-mode: multiply;
+  opacity: 0.55;
+}
+
+.capture-feed-label {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  padding: 2px 6px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #c8d0d4;
+  letter-spacing: 0.12em;
+  z-index: 3;
+}
+
+.capture-feed.self .capture-feed-label { color: #6ec8c4; }
 
 .capture-cam-video {
   width: 100%;
@@ -2579,101 +2599,82 @@ select.input {
   inset: 0;
   display: grid;
   place-items: center;
-  padding: 16px;
+  padding: 12px;
   text-align: center;
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 11px;
   color: #888;
-  background:
-    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.35) 3px),
-    #111;
+  background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.35) 3px), #111;
 }
 
-.capture-cam-fallback.err {
-  color: #e08888;
+.capture-cam-fallback.err { color: #e08888; }
+
+.capture-call-chat {
+  flex: 0 0 auto;
+  max-height: 34%;
+  border-top: 1px solid #222;
+  background: color-mix(in srgb, #0c0e12 92%, transparent);
 }
 
-.capture-cam-label {
-  position: absolute;
-  left: 10px;
-  top: 10px;
-  padding: 2px 6px;
-  background: rgba(0, 0, 0, 0.65);
-  color: #e05555;
-  letter-spacing: 0.12em;
+.capture-chat-dot { width: 8px; height: 8px; border-radius: 50%; background: #444; }
+.capture-chat-dot.live {
+  background: #e05555;
+  box-shadow: 0 0 8px #e05555;
+  animation: capture-blink 1s step-end infinite;
 }
-
-.capture-chat-pane {
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
-  background: #0c0c0e;
-}
+.capture-chat-lock { margin-left: auto; color: #e05555; letter-spacing: 0.14em; }
 
 .capture-chat-msgs {
-  flex: 1;
-  overflow: auto;
-  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
+  padding: 10px 12px;
+  overflow: auto;
+  max-height: 220px;
 }
 
 .capture-bubble {
   max-width: 92%;
-  padding: 8px 10px;
+  padding: 6px 8px;
   border-radius: 4px;
-  line-height: 1.55;
-  font-size: 13.5px;
+  font-size: 12.5px;
+  line-height: 1.45;
 }
-
 .capture-bubble.them {
   align-self: flex-start;
-  background: #16161a;
-  border: 1px solid #2a2a30;
-  color: #e8e8ea;
+  background: #161a22;
+  border: 1px solid #2a3140;
+  color: #d7dde5;
 }
-
 .capture-bubble.sys {
-  align-self: center;
+  align-self: stretch;
   background: transparent;
   border: 0;
-  color: #e05555;
+  color: #6ec8c4;
   font-family: var(--font-mono);
   font-size: 11.5px;
-  letter-spacing: 0.04em;
-}
-
-.capture-chat-input {
-  padding: 10px 14px;
-  border-top: 1px solid #222;
-  background: #0f0f12;
 }
 
 .capture-wipe-screen {
-  width: min(860px, 94vw);
-  padding: 4vh 2vw;
-  font-size: clamp(13px, 2vw, 17px);
-  line-height: 1.75;
-  color: #c8c8c8;
+  width: min(720px, 94vw);
+  padding: 28px 24px;
+  border: 1px solid #2a2a30;
+  background: #050608;
+  color: #c8d0d4;
+  min-height: 280px;
 }
-
 .capture-wipe-head {
   color: #e05555;
-  letter-spacing: 0.22em;
-  margin-bottom: 22px;
+  letter-spacing: 0.16em;
+  margin-bottom: 18px;
   font-size: 12px;
 }
+.capture-wipe-line { margin: 6px 0; font-size: 12.5px; }
+.capture-cursor { animation: capture-blink 0.55s step-end infinite; }
 
-@media (max-width: 720px) {
-  .capture-chat-body {
-    grid-template-columns: 1fr;
-    grid-template-rows: 38% 1fr;
-  }
-  .capture-cam {
-    border-right: 0;
-    border-bottom: 1px solid #222;
-  }
+@media (max-width: 640px) {
+  .capture-feed.self { width: 42%; right: 8px; bottom: 8px; }
+  .capture-call-chat { max-height: 40%; }
 }
 
 @media (max-width: 1366px) {

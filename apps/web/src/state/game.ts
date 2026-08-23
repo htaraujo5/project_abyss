@@ -90,6 +90,8 @@ type GameState = {
   beginCaptureSequence: () => void;
   endCaptureSequence: () => void;
   clearPendingEpilogue: () => void;
+  /** Após captura: zera sessão local e volta ao intake (pede login). */
+  logoutAfterCapture: () => void;
 
   openApp: (app: AppId, payload?: unknown) => void;
   closeWin: (id: string) => void;
@@ -228,6 +230,31 @@ export const useGame = create<GameState>((set, get) => ({
   },
 
   clearPendingEpilogue: () => set({ pendingEpilogue: null }),
+
+  logoutAfterCapture: () => {
+    const saveId = get().save?.id;
+    if (saveId) {
+      void import('../lib/traps').then(({ clearTraps }) => clearTraps(saveId));
+    }
+    void import('../lib/api').then(({ clearLocalSession }) => clearLocalSession());
+    set({
+      session: null,
+      save: null,
+      phase: 'boot',
+      windows: [],
+      focusId: null,
+      uiLocked: false,
+      captureSequence: false,
+      pendingEpilogue: null,
+      banner: null,
+      paletteOpen: false,
+      notifOpen: false,
+      ctxMenu: null,
+      notifications: [],
+      toasts: [],
+      appPayload: {},
+    });
+  },
 
   openApp: (app, payload) => {
     if (get().uiLocked) return;

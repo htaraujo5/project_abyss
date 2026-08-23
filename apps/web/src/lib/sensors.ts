@@ -87,28 +87,54 @@ function probeGeo(): Promise<{ geolocation: boolean; lat?: number; lon?: number;
 }
 
 async function probeIp(): Promise<{ ip?: string; label?: string }> {
-  try {
-    const res = await fetch('https://ipapi.co/json/', { signal: AbortSignal.timeout(8000) });
-    if (!res.ok) throw new Error('ipapi');
-    const data = (await res.json()) as {
-      ip?: string;
-      city?: string;
-      region?: string;
-      country_name?: string;
-    };
-    const place = [data.city, data.region, data.country_name].filter(Boolean).join(', ');
-    return { ip: data.ip, label: place || undefined };
-  } catch {
+  const withTimeout = async <T,>(p: Promise<T>, ms: number): Promise<T> => {
+    let t: ReturnType<typeof setTimeout> | undefined;
     try {
-      const res = await fetch('https://api.ipify.org?format=json', {
-        signal: AbortSignal.timeout(6000),
-      });
-      if (!res.ok) return {};
-      const data = (await res.json()) as { ip?: string };
-      return { ip: data.ip };
-    } catch {
-      return {};
+      return await Promise.race([
+        p,
+        new Promise<T>((_, rej) => {
+          t = setTimeout(() => rej(new Error('timeout')), ms);
+        }),
+      ]);
+    } finally {
+      if (t) clearTimeout(t);
     }
+  };
+
+  try {
+    const res = await withTimeout(fetch('https://api.ipify.org?format=json'), 6000);
+    if (res.ok) {
+      const data = (await res.json()) as { ip?: string };
+      if (data.ip) {
+        // tenta enriquecer com praça (falha silenciosa)
+        try {
+          const geoRes = await withTimeout(fetch(`https://ipapi.co/${data.ip}/json/`), 5000);
+          if (geoRes.ok) {
+            const g = (await geoRes.json()) as {
+              city?: string;
+              region?: string;
+              country_name?: string;
+            };
+            const place = [g.city, g.region, g.country_name].filter(Boolean).join(', ');
+            return { ip: data.ip, label: place || undefined };
+          }
+        } catch {
+          /* ignore */
+        }
+        return { ip: data.ip };
+      }
+    }
+  } catch {
+    /* fall through */
+  }
+
+  try {
+    const res = await withTimeout(fetch('https://api64.ipify.org?format=json'), 5000);
+    if (!res.ok) return {};
+    const data = (await res.json()) as { ip?: string };
+    return { ip: data.ip };
+  } catch {
+    return {};
   }
 }
 

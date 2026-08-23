@@ -8,20 +8,22 @@ import { IconAbyss } from '../shell/Icons';
 
 /** Epílogo narrativo — o desfecho já veio das ações do jogador. */
 export function EndingOverlay() {
-  const save = useGame((s) => s.save)!;
+  const save = useGame((s) => s.save);
   const setPhase = useGame((s) => s.setPhase);
   const openApp = useGame((s) => s.openApp);
   const windows = useGame((s) => s.windows);
   const pendingEpilogue = useGame((s) => s.pendingEpilogue);
   const clearPendingEpilogue = useGame((s) => s.clearPendingEpilogue);
-  const ending = (pendingEpilogue ?? save.ending ?? null) as EndingId | null;
+  const logoutAfterCapture = useGame((s) => s.logoutAfterCapture);
+  const ending = (pendingEpilogue ?? save?.ending ?? null) as EndingId | null;
   const def = ending ? ENDING_TEXT[ending] : null;
+  const isCapture = ending === 'capture';
 
   return (
     <div className="boot ending-overlay" style={{ position: 'absolute', inset: 0, zIndex: 900 }}>
       <div className="boot-card ending-card">
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <span style={{ color: ending === 'capture' ? 'var(--danger)' : 'var(--accent-soft)' }}>
+          <span style={{ color: isCapture ? 'var(--danger)' : 'var(--accent-soft)' }}>
             <IconAbyss size={26} />
           </span>
           <div>
@@ -49,7 +51,7 @@ export function EndingOverlay() {
           <>
             <div
               className="mono ending-result-title"
-              style={{ color: ending === 'capture' ? 'var(--danger)' : 'var(--accent-soft)' }}
+              style={{ color: isCapture ? 'var(--danger)' : 'var(--accent-soft)' }}
             >
               {def.title}
             </div>
@@ -60,16 +62,17 @@ export function EndingOverlay() {
               ))}
             </div>
             <div className="ending-aftermath mono tiny">{def.aftermath}</div>
-            {ending === 'capture' && (
+            {isCapture && (
               <p className="dim tiny" style={{ marginTop: 14, lineHeight: 1.7 }}>
-                A sessão foi purgada. Seu progresso voltou ao zero — a quarentena recomeçou.
+                Sessão sequestrada. Progresso purgado. A credencial será encerrada — será
+                necessário entrar de novo para reabrir a quarentena.
               </p>
             )}
-            {save.narrativeLog.length > 0 && (
+            {!!save?.narrativeLog?.length && (
               <>
                 <div className="hairline" style={{ margin: '18px 0' }} />
                 <div className="mono dim tiny" style={{ lineHeight: 2 }}>
-                  {save.narrativeLog.slice(-6).map((l, i) => (
+                  {save.narrativeLog.slice(-6).map((l: string, i: number) => (
                     <div key={i}>{l}</div>
                   ))}
                 </div>
@@ -79,7 +82,11 @@ export function EndingOverlay() {
               className="btn primary lg"
               style={{ marginTop: 18 }}
               onClick={() => {
-                clearTraps(save.id);
+                if (isCapture) {
+                  logoutAfterCapture();
+                  return;
+                }
+                if (save) clearTraps(save.id);
                 clearPendingEpilogue();
                 setPhase('playing');
                 if (windows.length === 0) {
@@ -88,7 +95,7 @@ export function EndingOverlay() {
                 }
               }}
             >
-              voltar ao desktop
+              {isCapture ? 'encerrar sessão e pedir login' : 'voltar ao desktop'}
             </button>
           </>
         )}
