@@ -73,8 +73,8 @@ export function SettingsApp() {
       <div className="pane-head">Áudio</div>
       <div className="panel" style={{ display: 'grid', gap: 14 }}>
         <p className="dim tiny" style={{ margin: 0 }}>
-          Sem trilha musical — leito ambiente leve (investigação) e sons curtos de interface. Na
-          captura: ruído branco; no wipe: silêncio total.
+          Sem “música de rádio” — score de suspense no intake, leito ambiente na investigação e
+          sons curtos de interface. Na captura: ruído branco; no wipe: silêncio total.
         </p>
         <div>
           <div className="tiny dim upper" style={{ marginBottom: 5 }}>

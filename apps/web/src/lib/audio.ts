@@ -1,4 +1,4 @@
-/** Áudio: SFX de UI + leito ambiente sintetizado (sem música). */
+/** Áudio: SFX de UI + leito ambiente sintetizado + bed de intake. */
 
 let unlocked = false;
 let uiVolume = 0.6;
@@ -7,28 +7,35 @@ let ctx: AudioContext | null = null;
 
 let ambientGain: GainNode | null = null;
 let ambientSources: AudioScheduledSourceNode[] = [];
+let ambientMode: 'desk' | 'intake' | null = null;
 let noiseGain: GainNode | null = null;
 let noiseSource: AudioBufferSourceNode | null = null;
+let intakeBed: HTMLAudioElement | null = null;
+let intakeFadeTimer: number | null = null;
 
-export function unlockAudio() {
+export function unlockAudio(prefer: 'desk' | 'intake' = 'desk') {
   unlocked = true;
   void ctx?.resume().catch(() => undefined);
-  if (!muted) startAmbient();
+  if (muted) return;
+  if (prefer === 'intake') startIntakeAmbience();
+  else startAmbient();
 }
 
 export function setUiVolume(v: number) {
   uiVolume = Math.max(0, Math.min(1, v));
   if (ambientGain && ctx) {
-    ambientGain.gain.setTargetAtTime(ambientLevel(), ctx.currentTime, 0.08);
+    ambientGain.gain.setTargetAtTime(ambientLevel(ambientMode ?? 'desk'), ctx.currentTime, 0.08);
   }
   if (noiseGain && ctx) {
     noiseGain.gain.setTargetAtTime(noiseLevel(), ctx.currentTime, 0.05);
   }
+  if (intakeBed) intakeBed.volume = intakeBedLevel();
 }
 
 export function setMuted(v: boolean) {
   muted = v;
   if (v) stopAllAudio(0.25);
+  else if (ambientMode === 'intake') startIntakeAmbience();
   else startAmbient();
 }
 
@@ -74,8 +81,13 @@ function ensureCtx() {
   return ctx;
 }
 
-function ambientLevel() {
-  return muted ? 0 : 0.028 * uiVolume;
+function ambientLevel(mode: 'desk' | 'intake') {
+  if (muted) return 0;
+  return (mode === 'intake' ? 0.055 : 0.028) * uiVolume;
+}
+
+function intakeBedLevel() {
+  return muted ? 0 : 0.22 * uiVolume;
 }
 
 function noiseLevel() {
@@ -97,17 +109,207 @@ function makeNoiseBuffer(ac: AudioContext, seconds: number, kind: 'white' | 'bro
   return buf;
 }
 
-/** Leito ambiente leve: ruído marrom filtrado + tom grave quase inaudível. */
+function clearAmbientSources(fade: number) {
+  if (!ctx || !ambientGain) {
+    ambientSources = [];
+    ambientGain = null;
+    ambientMode = null;
+    return;
+  }
+  const g = ambientGain;
+  const t0 = ctx.currentTime;
+  g.gain.cancelScheduledValues(t0);
+  g.gain.setValueAtTime(g.gain.value, t0);
+  g.gain.linearRampToValueAtTime(0, t0 + fade);
+  const sources = ambientSources;
+  ambientSources = [];
+  ambientGain = null;
+  ambientMode = null;
+  window.setTimeout(() => {
+    for (const s of sources) {
+      try {
+        s.stop();
+      } catch {
+        /* */
+      }
+    }
+    try {
+      g.disconnect();
+    } catch {
+      /* */
+    }
+  }, fade * 1000 + 40);
+}
+
+function stopIntakeBed(fade = 0.8) {
+  if (intakeFadeTimer != null) {
+    window.clearInterval(intakeFadeTimer);
+    intakeFadeTimer = null;
+  }
+  const el = intakeBed;
+  if (!el) return;
+  intakeBed = null;
+  const start = el.volume;
+  const steps = Math.max(1, Math.floor(fade * 20));
+  let i = 0;
+  intakeFadeTimer = window.setInterval(() => {
+    i += 1;
+    el.volume = Math.max(0, start * (1 - i / steps));
+    if (i >= steps) {
+      if (intakeFadeTimer != null) window.clearInterval(intakeFadeTimer);
+      intakeFadeTimer = null;
+      el.pause();
+      el.src = '';
+    }
+  }, fade * 50);
+}
+
+/** Bed OGG sinistro (score, não “música de rádio”) sob o drone. */
+function startIntakeBed() {
+  if (muted || intakeBed) return;
+  try {
+    const el = new Audio('/audio/09_Simulation_Unknown.ogg');
+    el.loop = true;
+    el.preload = 'auto';
+    el.volume = 0;
+    intakeBed = el;
+    void el
+      .play()
+      .then(() => {
+        if (intakeBed !== el || muted) {
+          el.pause();
+          return;
+        }
+        const target = intakeBedLevel();
+        const steps = 24;
+        let i = 0;
+        intakeFadeTimer = window.setInterval(() => {
+          i += 1;
+          if (intakeBed !== el) {
+            if (intakeFadeTimer != null) window.clearInterval(intakeFadeTimer);
+            intakeFadeTimer = null;
+            return;
+          }
+          el.volume = target * (i / steps);
+          if (i >= steps && intakeFadeTimer != null) {
+            window.clearInterval(intakeFadeTimer);
+            intakeFadeTimer = null;
+          }
+        }, 90);
+      })
+      .catch(() => {
+        if (intakeBed === el) intakeBed = null;
+      });
+  } catch {
+    /* */
+  }
+}
+
+/**
+ * Quarentena / intake: drone dissonante + ruído + bed de suspense.
+ * Não é trilha melódica — é score sobrenatural de fundo.
+ */
+export function startIntakeAmbience() {
+  if (muted || uiVolume <= 0) return;
+  try {
+    stopCaptureNoise(0.2);
+    if (ambientMode === 'intake' && ambientGain) {
+      startIntakeBed();
+      return;
+    }
+    clearAmbientSources(0.35);
+    stopIntakeBed(0.2);
+
+    const ac = ensureCtx();
+    const master = ac.createGain();
+    master.gain.value = 0;
+    master.connect(ac.destination);
+    ambientGain = master;
+    ambientMode = 'intake';
+
+    const noise = ac.createBufferSource();
+    noise.buffer = makeNoiseBuffer(ac, 5, 'brown');
+    noise.loop = true;
+    const lp = ac.createBiquadFilter();
+    lp.type = 'lowpass';
+    lp.frequency.value = 220;
+    lp.Q.value = 0.7;
+    const hp = ac.createBiquadFilter();
+    hp.type = 'highpass';
+    hp.frequency.value = 35;
+    const ng = ac.createGain();
+    ng.gain.value = 0.55;
+    noise.connect(hp).connect(lp).connect(ng).connect(master);
+    noise.start();
+    ambientSources.push(noise);
+
+    const pairs: [number, number][] = [
+      [46, 0.42],
+      [69.5, 0.28],
+      [92.5, 0.16],
+      [138.6, 0.08],
+    ];
+    for (const [hz, g] of pairs) {
+      const osc = ac.createOscillator();
+      const og = ac.createGain();
+      osc.type = 'sine';
+      osc.frequency.value = hz;
+      og.gain.value = g;
+      osc.connect(og).connect(master);
+      osc.start();
+      ambientSources.push(osc);
+    }
+
+    const lfo = ac.createOscillator();
+    const lfoGain = ac.createGain();
+    lfo.type = 'sine';
+    lfo.frequency.value = 0.07;
+    lfoGain.gain.value = 90;
+    lfo.connect(lfoGain).connect(lp.frequency);
+    lfo.start();
+    ambientSources.push(lfo);
+
+    const whisper = ac.createBufferSource();
+    whisper.buffer = makeNoiseBuffer(ac, 3, 'white');
+    whisper.loop = true;
+    const bp = ac.createBiquadFilter();
+    bp.type = 'bandpass';
+    bp.frequency.value = 2400;
+    bp.Q.value = 8;
+    const wg = ac.createGain();
+    wg.gain.value = 0.04;
+    whisper.connect(bp).connect(wg).connect(master);
+    whisper.start();
+    ambientSources.push(whisper);
+
+    master.gain.linearRampToValueAtTime(ambientLevel('intake'), ac.currentTime + 3.5);
+    startIntakeBed();
+  } catch {
+    /* áudio indisponível */
+  }
+}
+
+export function stopIntakeAmbience(fade = 1) {
+  stopIntakeBed(fade);
+  if (ambientMode === 'intake') clearAmbientSources(fade);
+}
+
+/** Leito ambiente leve do desktop: ruído marrom filtrado + tom grave. */
 export function startAmbient() {
   if (muted || uiVolume <= 0) return;
   try {
+    stopIntakeAmbience(0.6);
+    stopCaptureNoise(0.2);
     const ac = ensureCtx();
-    if (ambientGain) return;
+    if (ambientGain && ambientMode === 'desk') return;
+
+    clearAmbientSources(0.2);
 
     const master = ac.createGain();
     master.gain.value = 0;
     master.connect(ac.destination);
     ambientGain = master;
+    ambientMode = 'desk';
 
     const noise = ac.createBufferSource();
     noise.buffer = makeNoiseBuffer(ac, 4, 'brown');
@@ -123,7 +325,6 @@ export function startAmbient() {
     noise.start();
     ambientSources.push(noise);
 
-    // pulso muito baixo — “sala / servidor distante”
     const osc = ac.createOscillator();
     const og = ac.createGain();
     osc.type = 'sine';
@@ -133,36 +334,15 @@ export function startAmbient() {
     osc.start();
     ambientSources.push(osc);
 
-    master.gain.linearRampToValueAtTime(ambientLevel(), ac.currentTime + 2.2);
+    master.gain.linearRampToValueAtTime(ambientLevel('desk'), ac.currentTime + 2.2);
   } catch {
     /* áudio indisponível */
   }
 }
 
 export function stopAmbient(fade = 0.8) {
-  if (!ctx || !ambientGain) return;
-  const g = ambientGain;
-  const t0 = ctx.currentTime;
-  g.gain.cancelScheduledValues(t0);
-  g.gain.setValueAtTime(g.gain.value, t0);
-  g.gain.linearRampToValueAtTime(0, t0 + fade);
-  const sources = ambientSources;
-  ambientSources = [];
-  ambientGain = null;
-  window.setTimeout(() => {
-    for (const s of sources) {
-      try {
-        s.stop();
-      } catch {
-        /* already stopped */
-      }
-    }
-    try {
-      g.disconnect();
-    } catch {
-      /* */
-    }
-  }, fade * 1000 + 40);
+  stopIntakeBed(fade);
+  clearAmbientSources(fade);
 }
 
 /** Ruído branco contínuo — captura / câmera aberta. */
@@ -189,7 +369,6 @@ export function startCaptureNoise() {
     noise.start();
     noiseSource = noise;
 
-    // micro susto na abertura da câmera
     master.gain.linearRampToValueAtTime(noiseLevel() * 1.6, ac.currentTime + 0.08);
     master.gain.linearRampToValueAtTime(noiseLevel(), ac.currentTime + 0.55);
   } catch {
@@ -253,7 +432,6 @@ export function uiSound(kind: UiSound) {
   }
 }
 
-/** Estouro agressivo residual (opcional). */
 function playScareBurst(ac: AudioContext) {
   const t0 = ac.currentTime;
   const master = ac.createGain();

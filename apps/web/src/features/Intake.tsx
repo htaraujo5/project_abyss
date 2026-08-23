@@ -12,7 +12,7 @@ import {
 } from '../lib/api';
 import { useGame, type WinState } from '../state/game';
 import { useMeta } from '../state/meta';
-import { unlockAudio } from '../lib/audio';
+import { unlockAudio, startIntakeAmbience, stopIntakeAmbience } from '../lib/audio';
 import { IconAbyss } from '../shell/Icons';
 
 type Tone = 'out' | 'err' | 'ok' | 'cmd' | 'dim' | 'head';
@@ -240,6 +240,25 @@ export function IntakeConsole() {
     return () => clearInterval(t);
   }, []);
 
+  // score de quarentena — browsers só liberam áudio após gesto
+  useEffect(() => {
+    let armed = false;
+    const arm = () => {
+      if (armed) return;
+      armed = true;
+      unlockAudio('intake');
+      startIntakeAmbience();
+    };
+    arm();
+    window.addEventListener('pointerdown', arm);
+    window.addEventListener('keydown', arm);
+    return () => {
+      window.removeEventListener('pointerdown', arm);
+      window.removeEventListener('keydown', arm);
+      stopIntakeAmbience(1.2);
+    };
+  }, []);
+
   useEffect(() => {
     logRef.current?.scrollTo({ top: logRef.current.scrollHeight });
   }, [lines]);
@@ -360,7 +379,7 @@ export function IntakeConsole() {
 
     if (c === 'anonimo' || c === 'guest' || c === 'anônimo') {
       setBusy(true);
-      unlockAudio();
+      unlockAudio('intake');
       try {
         const session = loadLocalSession() ?? (await createGuest());
         setSession(session);
@@ -467,7 +486,7 @@ export function IntakeConsole() {
 
     setWizard(null);
     setBusy(true);
-    unlockAudio();
+    unlockAudio('intake');
     try {
       const session =
         wizard.kind === 'register'
