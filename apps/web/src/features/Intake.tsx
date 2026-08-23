@@ -255,7 +255,7 @@ export function IntakeConsole() {
     return () => {
       window.removeEventListener('pointerdown', arm);
       window.removeEventListener('keydown', arm);
-      stopIntakeAmbience(1.2);
+      stopIntakeAmbience(0);
     };
   }, []);
 
@@ -277,7 +277,7 @@ export function IntakeConsole() {
       save = save ? (await getSave(save.id)).save : (await createSave('Investigação 1')).save;
 
       print({ text: `montando ${save.name} · capítulo ${save.currentChapter}…`, tone: 'dim' });
-      stopIntakeAmbience(0.35);
+      stopIntakeAmbience(0);
       setSave(save);
       await useMeta.getState().loadStatic();
       await useMeta.getState().refreshChapter(save.id);

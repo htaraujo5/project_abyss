@@ -11,14 +11,16 @@ let ambientMode: 'desk' | 'intake' | null = null;
 let noiseGain: GainNode | null = null;
 let noiseSource: AudioBufferSourceNode | null = null;
 let intakeBed: HTMLAudioElement | null = null;
+/** Elemento ainda em fade-out (intakeBed já foi liberado). */
+let intakeBedDying: HTMLAudioElement | null = null;
 let intakeFadeTimer: number | null = null;
 
 export function unlockAudio(prefer: 'desk' | 'intake' = 'desk') {
   unlocked = true;
   void ctx?.resume().catch(() => undefined);
   if (muted) return;
+  // só o intake tem score; desktop fica em silêncio após login
   if (prefer === 'intake') startIntakeAmbience();
-  else startAmbient();
 }
 
 export function setUiVolume(v: number) {
@@ -35,8 +37,7 @@ export function setUiVolume(v: number) {
 export function setMuted(v: boolean) {
   muted = v;
   if (v) stopAllAudio(0.25);
-  // ao desmutar no desktop, só leito leve — nunca religa o score do intake
-  else startAmbient();
+  // desmutar não religa música — SFX voltam; score só no intake
 }
 
 /** stubs — mantidos para não quebrar imports residuais */
@@ -141,40 +142,45 @@ function clearAmbientSources(fade: number) {
   }, fade * 1000 + 40);
 }
 
+function killIntakeEl(el: HTMLAudioElement) {
+  try {
+    el.pause();
+    el.removeAttribute('src');
+    el.load();
+  } catch {
+    /* */
+  }
+  if (intakeBedDying === el) intakeBedDying = null;
+}
+
 function stopIntakeBed(fade = 0.35) {
   if (intakeFadeTimer != null) {
     window.clearInterval(intakeFadeTimer);
     intakeFadeTimer = null;
   }
-  const el = intakeBed;
-  if (!el) return;
+  const el = intakeBed ?? intakeBedDying;
+  const wasDying = !intakeBed && !!intakeBedDying;
   intakeBed = null;
+  if (!el) return;
+  intakeBedDying = el;
 
-  const kill = () => {
-    try {
-      el.pause();
-      el.removeAttribute('src');
-      el.load();
-    } catch {
-      /* */
-    }
-  };
-
-  if (fade <= 0 || el.volume <= 0.001) {
-    kill();
+  // segundo stop cancela o fade e mata — evita OGG preso em volume baixo
+  if (wasDying || fade <= 0 || el.volume <= 0.001) {
+    killIntakeEl(el);
     return;
   }
 
   const start = el.volume;
   const steps = Math.max(1, Math.floor(fade * 16));
   let i = 0;
+  const dying = el;
   intakeFadeTimer = window.setInterval(() => {
     i += 1;
-    el.volume = Math.max(0, start * (1 - i / steps));
+    dying.volume = Math.max(0, start * (1 - i / steps));
     if (i >= steps) {
       if (intakeFadeTimer != null) window.clearInterval(intakeFadeTimer);
       intakeFadeTimer = null;
-      kill();
+      killIntakeEl(dying);
     }
   }, Math.max(16, (fade * 1000) / steps));
 }
