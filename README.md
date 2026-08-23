@@ -57,7 +57,7 @@ npm run soundtrack:download
 ## Deploy (Dokploy)
 
 Painel: [http://2.24.87.103:3000/](http://2.24.87.103:3000/)  
-Domínio: **https://project_abyss.softnexware.com**
+Domínio: **https://abyss_project.softnexware.com**
 
 | Serviço | Container port (Dokploy Domains) | Host (debug) |
 | --- | --- | --- |
@@ -68,7 +68,7 @@ Domínio: **https://project_abyss.softnexware.com**
 
 No Dokploy → Domains do compose:
 
-1. Host: `project_abyss.softnexware.com`
+1. Host: `abyss_project.softnexware.com`
 2. Service: `web`
 3. Container Port: **8035**
 4. HTTPS + Let's Encrypt

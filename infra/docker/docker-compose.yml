@@ -1,7 +1,7 @@
-# Dokploy (http://2.24.87.103:3000) + domínio project_abyss.softnexware.com
+# Dokploy (http://2.24.87.103:3000) + domínio abyss_project.softnexware.com
 #
 # Domains → Create Domain:
-#   Host             = project_abyss.softnexware.com
+#   Host             = abyss_project.softnexware.com
 #   Service          = web
 #   Container Port   = 8035
 #   HTTPS            = ON + Let's Encrypt
