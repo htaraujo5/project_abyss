@@ -68,6 +68,10 @@ export function applyProgressDelta(
   emit('save-updated', { source: opts.source ?? 'progress' });
 }
 
+function openGameGuide() {
+  window.open('/guia.html', '_blank', 'noopener,noreferrer');
+}
+
 /**
  * Executa um comando no runtime e propaga todos os efeitos de jogo
  * (save, notificações, evidências, capítulo, final) para o resto da UI.
@@ -77,8 +81,20 @@ export async function runCommand(command: string, source = 'terminal'): Promise<
   const save = g.save;
   if (!save) return null;
 
+  // Abrir antes de qualquer await — senão o browser bloqueia o popup.
+  const head = command.trim().split(/\s+/)[0]?.toLowerCase() ?? '';
+  if (head === 'ajuda' || head === 'guia' || head === 'guide') {
+    openGameGuide();
+  }
+
   const before = save.currentChapter;
   const result = await execCommand(save.id, command);
   applyProgressDelta(result, { beforeChapter: before, source });
+
+  // Fallback se o comando veio de alias/pipe e o evento ainda pede o guia
+  if (result.events?.includes('guide.open') && !(head === 'ajuda' || head === 'guia' || head === 'guide')) {
+    openGameGuide();
+  }
+
   return result;
 }

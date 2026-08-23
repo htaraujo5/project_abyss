@@ -1367,7 +1367,8 @@ function gameHelp(): ExecResult {
   rows.push(
     '',
     'Operadores: |  &&  ||  ;  >  >>  <  2>  $(...)  <(...)  *  ?  {}',
-    'Use man <comando> para detalhes. Game: submit, investigate, choose, epilogue.',
+    'Use man <comando> para detalhes. Game: submit, investigate, ajuda/guia, choose, epilogue.',
+    'Travou? digite: ajuda   → abre o guia completo em nova aba (spoilers).',
   );
   return lines(rows);
 }
@@ -1432,6 +1433,30 @@ const GAME: CommandSpec[] = [
   }),
   cmd('flag', 'jogo', 'flag', 'flags do servidor', () => out('(flags are server-side — use Vault app)\n')),
   cmd('help', 'jogo', 'help', 'lista categorias e comandos', gameHelp),
+  cmd('ajuda', 'jogo', 'ajuda', 'abre o guia do jogo em nova aba (spoilers)', ({ sh }) => {
+    sh.emit('guide.open');
+    return lines([
+      'ABYSS — guia do jogo',
+      'Abrindo passo a passo completo em nova aba do navegador…',
+      'Aviso: contém spoilers (respostas, caminhos e finais).',
+    ]);
+  }),
+  cmd('guia', 'jogo', 'guia', 'alias de ajuda — abre o guia (spoilers)', ({ sh }) => {
+    sh.emit('guide.open');
+    return lines([
+      'ABYSS — guia do jogo',
+      'Abrindo passo a passo completo em nova aba do navegador…',
+      'Aviso: contém spoilers (respostas, caminhos e finais).',
+    ]);
+  }),
+  cmd('guide', 'jogo', 'guide', 'alias de ajuda — abre o guia (spoilers)', ({ sh }) => {
+    sh.emit('guide.open');
+    return lines([
+      'ABYSS — guide',
+      'Opening full walkthrough in a new browser tab…',
+      'Warning: spoilers (answers, paths, endings).',
+    ]);
+  }),
   cmd('man', 'jogo', 'man comando', 'manual do comando', ({ args }) => {
     const name = parseArgs(args).operands[0];
     if (!name) return gameHelp();

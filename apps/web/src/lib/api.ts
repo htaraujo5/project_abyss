@@ -103,6 +103,7 @@ export async function execCommand(saveId: string, command: string) {
     stderr: string;
     exitCode: number;
     cwd: string;
+    events?: string[];
     completedPuzzles: string[];
     unlockedEvidence: string[];
     newFlags: string[];

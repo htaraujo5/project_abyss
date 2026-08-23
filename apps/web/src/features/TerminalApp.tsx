@@ -30,7 +30,7 @@ const THEMES = {
   },
 } as const;
 
-const QUICK = ['help', 'ls -la', 'investigate', 'flag'];
+const QUICK = ['ajuda', 'help', 'ls -la', 'investigate', 'flag'];
 
 type Tab = { id: string; label: string };
 
@@ -185,7 +185,7 @@ function TerminalPane({
     };
 
     term.writeln('\x1b[38;5;80mPROJECT ABYSS\x1b[0m — runtime Unix isolado (VFS efêmero)');
-    term.writeln('\x1b[2mhelp lista os comandos. A GUI resume; o shell mostra.\x1b[0m');
+    term.writeln('\x1b[2mhelp lista os comandos. Travou? digite ajuda — abre o guia em nova aba.\x1b[0m');
     term.write(`\r\n${promptStr()}`);
 
     async function submit(cmd: string) {
